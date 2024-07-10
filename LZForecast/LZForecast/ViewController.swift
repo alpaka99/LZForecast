@@ -7,15 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+class ViewController: BaseViewController<BaseView> {
+    
+    override func configureNavigationItem() {
+        super.configureNavigationItem()
         
-        view.backgroundColor = .systemIndigo
+        navigationItem.title = "LZForecast"
     }
-
-
 }
 
