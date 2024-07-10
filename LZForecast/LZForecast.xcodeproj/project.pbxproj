@@ -12,6 +12,7 @@
 		CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */; };
 		CED1E1AF2C3E79A7004BFBE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED1E1AE2C3E79A7004BFBE1 /* Assets.xcassets */; };
 		CED1E1B22C3E79A7004BFBE1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CED1E1B12C3E79A7004BFBE1 /* Base */; };
+		CED1E1BB2C3E7F41004BFBE1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1BA2C3E7F41004BFBE1 /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CED1E1AE2C3E79A7004BFBE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CED1E1B12C3E79A7004BFBE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CED1E1B32C3E79A7004BFBE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED1E1BA2C3E7F41004BFBE1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		CED1E1A42C3E79A5004BFBE1 /* LZForecast */ = {
 			isa = PBXGroup;
 			children = (
+				CED1E1B92C3E7F38004BFBE1 /* Bases */,
 				CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */,
 				CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */,
 				CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */,
@@ -62,6 +65,14 @@
 				CED1E1B32C3E79A7004BFBE1 /* Info.plist */,
 			);
 			path = LZForecast;
+			sourceTree = "<group>";
+		};
+		CED1E1B92C3E7F38004BFBE1 /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				CED1E1BA2C3E7F41004BFBE1 /* BaseView.swift */,
+			);
+			path = Bases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 				CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */,
 				CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */,
 				CED1E1A82C3E79A5004BFBE1 /* SceneDelegate.swift in Sources */,
+				CED1E1BB2C3E7F41004BFBE1 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
