@@ -12,7 +12,7 @@ class BaseViewController<T: BaseView>: UIViewController {
     
     override func loadView() {
         self.view = baseView
-        baseView.backgroundColor = .systemOrange
+        baseView.backgroundColor = .white
     }
     
     init(baseView: T) {

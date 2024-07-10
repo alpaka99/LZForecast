@@ -5,4 +5,7 @@
 //  Created by user on 7/11/24.
 //
 
-import Foundation
+import UIKit
+
+final class MainViewController: BaseViewController<MainView> {
+}
