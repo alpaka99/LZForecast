@@ -58,12 +58,10 @@
 		CED1E1A42C3E79A5004BFBE1 /* LZForecast */ = {
 			isa = PBXGroup;
 			children = (
+				CED1E1BE2C3E853A004BFBE1 /* App */,
 				CED1E1B92C3E7F38004BFBE1 /* Bases */,
-				CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */,
-				CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */,
-				CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */,
-				CED1E1AE2C3E79A7004BFBE1 /* Assets.xcassets */,
-				CED1E1B02C3E79A7004BFBE1 /* LaunchScreen.storyboard */,
+				CED1E1C22C3E85AD004BFBE1 /* Resources */,
+				CED1E1C12C3E8556004BFBE1 /* Views */,
 				CED1E1B32C3E79A7004BFBE1 /* Info.plist */,
 			);
 			path = LZForecast;
@@ -76,6 +74,32 @@
 				CED1E1BC2C3E7FB4004BFBE1 /* BaseViewController.swift */,
 			);
 			path = Bases;
+			sourceTree = "<group>";
+		};
+		CED1E1BE2C3E853A004BFBE1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */,
+				CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */,
+				CED1E1B02C3E79A7004BFBE1 /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CED1E1C12C3E8556004BFBE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CED1E1C22C3E85AD004BFBE1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CED1E1AE2C3E79A7004BFBE1 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
