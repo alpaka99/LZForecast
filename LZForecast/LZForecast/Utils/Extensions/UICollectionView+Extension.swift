@@ -17,7 +17,6 @@ extension UICollectionView {
         let length = (ScreenSize.width - (spacing * (2 + numberOfCellsInRow - 1))) / numberOfCellsInRow
         
         layout.itemSize = CGSize(width: length, height: length * heightMultiplier)
-        print(layout.itemSize)
         return layout
     }
 }

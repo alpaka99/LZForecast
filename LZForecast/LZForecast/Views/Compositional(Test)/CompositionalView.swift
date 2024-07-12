@@ -67,14 +67,13 @@ final class CompositionalView: BaseView {
     
     let mapButton = {
         var button = UIButton()
-            .image(systemName: "map")
+
         
         return button
     }()
     
     let bulletListButton = {
         var button = UIButton()
-            .image(systemName: "list.bullet")
         
         return button
     }()

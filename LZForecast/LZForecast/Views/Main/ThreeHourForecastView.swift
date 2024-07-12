@@ -9,7 +9,12 @@ import UIKit
 
 import SnapKit
 
-final class ThreeHourForecastCell: BaseTableViewCell {
+final class ThreeHourForecastView: BaseView {
+    let title = {
+        let label = UILabel()
+        label.text = "3시간마다 알림"
+        return label
+    }()
     let collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionView.flowLayout(
@@ -20,24 +25,26 @@ final class ThreeHourForecastCell: BaseTableViewCell {
         )
     )
     
-    
     override func configureHierarchy() {
         super.configureHierarchy()
         
-        contentView.addSubview(collectionView)
+        self.addSubview(title)
+        self.addSubview(collectionView)
+        collectionView.backgroundColor = .blue
     }
     
     override func configureLayout() {
         super.configureLayout()
+        title.snp.makeConstraints {
+            $0.top.horizontalEdges.equalTo(self)
+        }
         collectionView.snp.makeConstraints {
-            $0.edges.equalTo(contentView)
-            $0.height.equalTo(200)
+            $0.top.equalTo(title.snp.bottom)
+            $0.edges.equalTo(self)
         }
     }
     
     override func configureUI() {
         super.configureUI()
-        
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifier)
     }
 }

@@ -11,52 +11,47 @@ final class MainViewController: BaseViewController<MainView> {
     override func configureDelegate() {
         super.configureDelegate()
         
-        baseView.tableView.delegate = self
-        baseView.tableView.dataSource = self
-        baseView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.identifier)
-        baseView.tableView.register(CityInfoCell.self, forCellReuseIdentifier: CityInfoCell.identifier)
-        baseView.tableView.register(ThreeHourForecastCell.self, forCellReuseIdentifier: ThreeHourForecastCell.identifier)
+        baseView.mapButton.addTarget(self, action: #selector(mapButtonTapped), for: .touchUpInside)
+        baseView.bulletListButton.addTarget(self, action: #selector(bulletListButtonTapped), for: .touchUpInside)
+        
+        baseView.threeHourForecastView.collectionView.delegate = self
+        baseView.threeHourForecastView.collectionView.dataSource = self
+        baseView.threeHourForecastView.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifier)
+        
+        baseView.fiveDayForecastView.tableView.delegate = self
+        baseView.fiveDayForecastView.tableView.dataSource = self
+        baseView.fiveDayForecastView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.identifier)
+        
+        baseView.scrollView.backgroundColor = .red
+        baseView.stackView.backgroundColor = .orange
+        baseView.threeHourForecastView.collectionView.backgroundColor = .blue
+    }
+    
+    @objc
+    func mapButtonTapped() {
+        print(#function)
+    }
+    
+    @objc
+    func bulletListButtonTapped() {
+        print(#function)
     }
     
     override func configureNavigationItem() {
         super.configureNavigationItem()
-        
-        baseView.tableView.backgroundColor = .clear
     }
+    
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CityInfoCell.identifier, for: indexPath) as? CityInfoCell else { return UITableViewCell() }
-            
-            return cell
-        } else if indexPath.section == 1 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ThreeHourForecastCell.identifier, for: indexPath) as? ThreeHourForecastCell else { return UITableViewCell() }
-            
-            
-            cell.collectionView.delegate = self
-            cell.collectionView.dataSource = self
-            
-            return cell
-        } else {
-            return UITableViewCell()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.identifier, for: indexPath)
+        cell.backgroundColor = .blue
+        return cell
     }
 }
 
@@ -66,12 +61,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.identifier, for: indexPath) as UICollectionViewCell
-        cell.backgroundColor = .systemOrange
+        print(#function)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.identifier, for: indexPath)
+        cell.backgroundColor = .orange
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
     }
 }

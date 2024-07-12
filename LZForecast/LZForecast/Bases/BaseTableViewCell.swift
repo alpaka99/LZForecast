@@ -27,6 +27,5 @@ class BaseTableViewCell: UITableViewCell {
     
     internal func configureUI() {
         backgroundColor = .clear
-        contentView.backgroundColor = .clear
     }
 }

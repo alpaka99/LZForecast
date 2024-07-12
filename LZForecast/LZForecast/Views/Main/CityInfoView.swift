@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class CityInfoCell: BaseTableViewCell {
+final class CityInfoView: BaseView {
     let cityName = {
         let label = UILabel()
         label.textColor = .white
@@ -61,14 +61,14 @@ final class CityInfoCell: BaseTableViewCell {
     override func configureHierarchy() {
         super.configureHierarchy()
         
-        contentView.addSubview(stackView)
+        self.addSubview(stackView)
     }
     
     override func configureLayout() {
         super.configureLayout()
         
         stackView.snp.makeConstraints {
-            $0.edges.equalTo(contentView)
+            $0.edges.equalTo(self)
                 .inset(40)
         }
     }
@@ -76,7 +76,6 @@ final class CityInfoCell: BaseTableViewCell {
     override func configureUI() {
         super.configureUI()
         
-        contentView.backgroundColor = .clear
-        self.backgroundView?.backgroundColor = .clear
+        self.backgroundColor = .clear
     }
 }
