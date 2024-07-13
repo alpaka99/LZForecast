@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 final class MainView: BaseView {
-    let scrollView = UIScrollView()
+    let tableView = UITableView()
     
     let background = {
         let image = UIImageView()
@@ -19,21 +19,7 @@ final class MainView: BaseView {
     }()
     
     let cityInfo = CityInfoView()
-    let threeHourForecastView = ThreeHourForecastView()
-    let fiveDayForecastView = FiveDayForecastView()
     
-    lazy var stackView = { [weak self] in
-        let stack = UIStackView()
-        guard let view = self else { return stack }
-        stack.axis = .vertical
-        stack.alignment = .center
-        
-        stack.addArrangedSubview(view.cityInfo)
-        stack.addArrangedSubview(view.threeHourForecastView)
-        stack.addArrangedSubview(view.fiveDayForecastView)
-        
-        return stack
-    }()
     
     let mapButton = {
         var button = UIButton()
@@ -60,8 +46,7 @@ final class MainView: BaseView {
     override func configureHierarchy() {
         super.configureHierarchy()
         self.addSubview(background)
-        background.addSubview(scrollView)
-        scrollView.addSubview(stackView)
+        self.addSubview(tableView)
         self.addSubview(mapButton)
         self.addSubview(bulletListButton)
     }
@@ -73,32 +58,23 @@ final class MainView: BaseView {
             $0.edges.equalTo(self)
         }
         
-        scrollView.snp.makeConstraints {
-            $0.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
+        tableView.snp.makeConstraints {
+            $0.top.horizontalEdges.equalTo(self)
         }
         
-        stackView.snp.makeConstraints {
-            $0.verticalEdges.equalTo(scrollView.contentLayoutGuide)
-            $0.horizontalEdges.equalTo(scrollView.frameLayoutGuide)
-        }
-//        
+        
         mapButton.snp.makeConstraints {
-            $0.top.equalTo(scrollView.snp.bottom)
-            $0.leading.equalTo(scrollView.snp.leading)
+            $0.top.equalTo(tableView.snp.bottom)
+            $0.leading.equalTo(tableView.snp.leading)
             $0.bottom.equalTo(self.safeAreaLayoutGuide)
             $0.size.equalTo(50)
         }
         
         bulletListButton.snp.makeConstraints {
-            $0.top.equalTo(scrollView.snp.bottom)
-            $0.trailing.equalTo(scrollView.snp.trailing)
+            $0.top.equalTo(tableView.snp.bottom)
+            $0.trailing.equalTo(tableView.snp.trailing)
             $0.bottom.equalTo(self.safeAreaLayoutGuide)
             $0.size.equalTo(50)
         }
-    }
-    
-    
-    override func configureUI() {
-        super.configureUI()
     }
 }

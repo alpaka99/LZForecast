@@ -133,8 +133,6 @@ extension CompositionalViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Test", for: indexPath) as UICollectionViewCell
         
-        cell.backgroundColor = .systemOrange
-        
         return cell
     }
     

@@ -7,6 +7,8 @@
 
 import UIKit
 
+import SnapKit
+
 final class MainViewController: BaseViewController<MainView> {
     override func configureDelegate() {
         super.configureDelegate()
@@ -14,17 +16,11 @@ final class MainViewController: BaseViewController<MainView> {
         baseView.mapButton.addTarget(self, action: #selector(mapButtonTapped), for: .touchUpInside)
         baseView.bulletListButton.addTarget(self, action: #selector(bulletListButtonTapped), for: .touchUpInside)
         
-        baseView.threeHourForecastView.collectionView.delegate = self
-        baseView.threeHourForecastView.collectionView.dataSource = self
-        baseView.threeHourForecastView.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifier)
-        
-        baseView.fiveDayForecastView.tableView.delegate = self
-        baseView.fiveDayForecastView.tableView.dataSource = self
-        baseView.fiveDayForecastView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.identifier)
-        
-        baseView.scrollView.backgroundColor = .red
-        baseView.stackView.backgroundColor = .orange
-        baseView.threeHourForecastView.collectionView.backgroundColor = .blue
+        baseView.tableView.delegate = self
+        baseView.tableView.dataSource = self
+        baseView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.identifier)
+        baseView.tableView.register(ThreeHourForecastCell.self, forCellReuseIdentifier: ThreeHourForecastCell.identifier)
+        baseView.tableView.register(FiveDayForecastCell.self, forCellReuseIdentifier: FiveDayForecastCell.identifier)
     }
     
     @objc
@@ -45,18 +41,36 @@ final class MainViewController: BaseViewController<MainView> {
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.identifier, for: indexPath)
-        cell.backgroundColor = .blue
-        return cell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ThreeHourForecastCell.identifier, for: indexPath) as? ThreeHourForecastCell else { return UITableViewCell() }
+            cell.backgroundColor = .orange
+            cell.collectionView.delegate = self
+            cell.collectionView.dataSource = self
+            cell.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifier)
+            
+            return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        print(#function)
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(#function)
         return 8
     }
     
@@ -64,6 +78,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         print(#function)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.identifier, for: indexPath)
         cell.backgroundColor = .orange
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
     }
 }
