@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEB45A802C42AE0000327314 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A7F2C42AE0000327314 /* MapCell.swift */; };
+		CEB45A822C42B31400327314 /* AdditionalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A812C42B31400327314 /* AdditionalInfoCell.swift */; };
+		CEB45A852C42C62600327314 /* ThreeHourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A842C42C62600327314 /* ThreeHourCollectionViewCell.swift */; };
+		CEB45A872C42CEB600327314 /* AdditionalInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A862C42CEB600327314 /* AdditionalInfoCollectionViewCell.swift */; };
 		CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */; };
 		CED1E1A82C3E79A5004BFBE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */; };
 		CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */; };
@@ -15,9 +19,27 @@
 		CED1E1BB2C3E7F41004BFBE1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1BA2C3E7F41004BFBE1 /* BaseView.swift */; };
 		CED1E1BD2C3E7FB4004BFBE1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1BC2C3E7FB4004BFBE1 /* BaseViewController.swift */; };
 		CED1E1C62C3E86B6004BFBE1 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1C52C3E86B6004BFBE1 /* Observable.swift */; };
+		CED1E1C92C3F46B9004BFBE1 /* CompositionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1C82C3F46B9004BFBE1 /* CompositionalView.swift */; };
+		CED1E1CB2C3F46CF004BFBE1 /* CompositionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1CA2C3F46CF004BFBE1 /* CompositionalViewController.swift */; };
+		CED1E1CE2C3F49C6004BFBE1 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1CD2C3F49C6004BFBE1 /* UIButton+Extension.swift */; };
+		CED1E1D12C3F4C59004BFBE1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CED1E1D02C3F4C59004BFBE1 /* SnapKit */; };
+		CED1E1DE2C3FC190004BFBE1 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1DD2C3FC190004BFBE1 /* BaseTableViewCell.swift */; };
+		CED1E1E12C3FEC57004BFBE1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1E02C3FEC57004BFBE1 /* MainViewController.swift */; };
+		CED1E1E32C3FEC5B004BFBE1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1E22C3FEC5B004BFBE1 /* MainView.swift */; };
+		CED1E1E62C3FED29004BFBE1 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1E52C3FED29004BFBE1 /* Reusable.swift */; };
+		CED1E1E82C3FEE6D004BFBE1 /* CityInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1E72C3FEE6D004BFBE1 /* CityInfoCell.swift */; };
+		CED1E1EA2C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1E92C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift */; };
+		CED1E1EC2C3FF54D004BFBE1 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1EB2C3FF54D004BFBE1 /* UICollectionView+Extension.swift */; };
+		CED1E1EF2C3FF66D004BFBE1 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1EE2C3FF66D004BFBE1 /* ScreenSize.swift */; };
+		CED1E1F12C3FFD9D004BFBE1 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1F02C3FFD9D004BFBE1 /* BaseCollectionViewCell.swift */; };
+		CED1E1F32C4009EC004BFBE1 /* FiveDayForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1F22C4009EC004BFBE1 /* FiveDayForecastCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEB45A7F2C42AE0000327314 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
+		CEB45A812C42B31400327314 /* AdditionalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoCell.swift; sourceTree = "<group>"; };
+		CEB45A842C42C62600327314 /* ThreeHourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeHourCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEB45A862C42CEB600327314 /* AdditionalInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		CED1E1A22C3E79A5004BFBE1 /* LZForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +50,19 @@
 		CED1E1BA2C3E7F41004BFBE1 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		CED1E1BC2C3E7FB4004BFBE1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CED1E1C52C3E86B6004BFBE1 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		CED1E1C82C3F46B9004BFBE1 /* CompositionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalView.swift; sourceTree = "<group>"; };
+		CED1E1CA2C3F46CF004BFBE1 /* CompositionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalViewController.swift; sourceTree = "<group>"; };
+		CED1E1CD2C3F49C6004BFBE1 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		CED1E1DD2C3FC190004BFBE1 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		CED1E1E02C3FEC57004BFBE1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CED1E1E22C3FEC5B004BFBE1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CED1E1E52C3FED29004BFBE1 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		CED1E1E72C3FEE6D004BFBE1 /* CityInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoCell.swift; sourceTree = "<group>"; };
+		CED1E1E92C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeHourForecastCell.swift; sourceTree = "<group>"; };
+		CED1E1EB2C3FF54D004BFBE1 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		CED1E1EE2C3FF66D004BFBE1 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		CED1E1F02C3FFD9D004BFBE1 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		CED1E1F22C4009EC004BFBE1 /* FiveDayForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayForecastCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,12 +70,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED1E1D12C3F4C59004BFBE1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEB45A832C42C61000327314 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A842C42C62600327314 /* ThreeHourCollectionViewCell.swift */,
+				CEB45A862C42CEB600327314 /* AdditionalInfoCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		CED1E1992C3E79A5004BFBE1 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +120,8 @@
 			children = (
 				CED1E1BA2C3E7F41004BFBE1 /* BaseView.swift */,
 				CED1E1BC2C3E7FB4004BFBE1 /* BaseViewController.swift */,
+				CED1E1DD2C3FC190004BFBE1 /* BaseTableViewCell.swift */,
+				CED1E1F02C3FFD9D004BFBE1 /* BaseCollectionViewCell.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -92,6 +139,8 @@
 		CED1E1C12C3E8556004BFBE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CED1E1DF2C3FEC44004BFBE1 /* Compositional(Test) */,
+				CED1E1C72C3F46B3004BFBE1 /* Main */,
 				CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */,
 			);
 			path = Views;
@@ -108,6 +157,9 @@
 		CED1E1C32C3E85F8004BFBE1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CED1E1ED2C3FF664004BFBE1 /* Constants */,
+				CED1E1CC2C3F49BC004BFBE1 /* Extensions */,
+				CED1E1E42C3FED1E004BFBE1 /* Protocol */,
 				CED1E1C42C3E86AF004BFBE1 /* Observable */,
 			);
 			path = Utils;
@@ -119,6 +171,55 @@
 				CED1E1C52C3E86B6004BFBE1 /* Observable.swift */,
 			);
 			path = Observable;
+			sourceTree = "<group>";
+		};
+		CED1E1C72C3F46B3004BFBE1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A832C42C61000327314 /* Cell */,
+				CED1E1E02C3FEC57004BFBE1 /* MainViewController.swift */,
+				CED1E1E22C3FEC5B004BFBE1 /* MainView.swift */,
+				CED1E1E72C3FEE6D004BFBE1 /* CityInfoCell.swift */,
+				CED1E1E92C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift */,
+				CED1E1F22C4009EC004BFBE1 /* FiveDayForecastCell.swift */,
+				CEB45A7F2C42AE0000327314 /* MapCell.swift */,
+				CEB45A812C42B31400327314 /* AdditionalInfoCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CED1E1CC2C3F49BC004BFBE1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CED1E1CD2C3F49C6004BFBE1 /* UIButton+Extension.swift */,
+				CED1E1EB2C3FF54D004BFBE1 /* UICollectionView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CED1E1DF2C3FEC44004BFBE1 /* Compositional(Test) */ = {
+			isa = PBXGroup;
+			children = (
+				CED1E1C82C3F46B9004BFBE1 /* CompositionalView.swift */,
+				CED1E1CA2C3F46CF004BFBE1 /* CompositionalViewController.swift */,
+			);
+			path = "Compositional(Test)";
+			sourceTree = "<group>";
+		};
+		CED1E1E42C3FED1E004BFBE1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CED1E1E52C3FED29004BFBE1 /* Reusable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CED1E1ED2C3FF664004BFBE1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CED1E1EE2C3FF66D004BFBE1 /* ScreenSize.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +238,9 @@
 			dependencies = (
 			);
 			name = LZForecast;
+			packageProductDependencies = (
+				CED1E1D02C3F4C59004BFBE1 /* SnapKit */,
+			);
 			productName = LZForecast;
 			productReference = CED1E1A22C3E79A5004BFBE1 /* LZForecast.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +269,9 @@
 				Base,
 			);
 			mainGroup = CED1E1992C3E79A5004BFBE1;
+			packageReferences = (
+				CED1E1CF2C3F4C59004BFBE1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = CED1E1A32C3E79A5004BFBE1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -191,12 +298,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED1E1F32C4009EC004BFBE1 /* FiveDayForecastCell.swift in Sources */,
+				CEB45A872C42CEB600327314 /* AdditionalInfoCollectionViewCell.swift in Sources */,
+				CED1E1EC2C3FF54D004BFBE1 /* UICollectionView+Extension.swift in Sources */,
 				CED1E1BD2C3E7FB4004BFBE1 /* BaseViewController.swift in Sources */,
+				CED1E1E32C3FEC5B004BFBE1 /* MainView.swift in Sources */,
+				CED1E1E82C3FEE6D004BFBE1 /* CityInfoCell.swift in Sources */,
+				CEB45A802C42AE0000327314 /* MapCell.swift in Sources */,
+				CED1E1E12C3FEC57004BFBE1 /* MainViewController.swift in Sources */,
+				CED1E1EA2C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift in Sources */,
 				CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */,
+				CEB45A852C42C62600327314 /* ThreeHourCollectionViewCell.swift in Sources */,
+				CED1E1C92C3F46B9004BFBE1 /* CompositionalView.swift in Sources */,
+				CED1E1EF2C3FF66D004BFBE1 /* ScreenSize.swift in Sources */,
 				CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */,
+				CED1E1E62C3FED29004BFBE1 /* Reusable.swift in Sources */,
+				CED1E1F12C3FFD9D004BFBE1 /* BaseCollectionViewCell.swift in Sources */,
 				CED1E1A82C3E79A5004BFBE1 /* SceneDelegate.swift in Sources */,
+				CEB45A822C42B31400327314 /* AdditionalInfoCell.swift in Sources */,
+				CED1E1CE2C3F49C6004BFBE1 /* UIButton+Extension.swift in Sources */,
 				CED1E1C62C3E86B6004BFBE1 /* Observable.swift in Sources */,
 				CED1E1BB2C3E7F41004BFBE1 /* BaseView.swift in Sources */,
+				CED1E1DE2C3FC190004BFBE1 /* BaseTableViewCell.swift in Sources */,
+				CED1E1CB2C3F46CF004BFBE1 /* CompositionalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +464,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CZH2CMCGCZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LZForecast/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LZForecast;
@@ -371,6 +496,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CZH2CMCGCZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LZForecast/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LZForecast;
@@ -417,6 +543,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CED1E1CF2C3F4C59004BFBE1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CED1E1D02C3F4C59004BFBE1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CED1E1CF2C3F4C59004BFBE1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CED1E19A2C3E79A5004BFBE1 /* Project object */;
 }
