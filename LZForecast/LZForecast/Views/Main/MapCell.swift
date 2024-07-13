@@ -4,7 +4,7 @@
 //
 //  Created by user on 7/13/24.
 //
-
+import MapKit
 import UIKit
 
 import SnapKit
@@ -15,16 +15,16 @@ final class MapCell: BaseTableViewCell {
         label.text = "위치"
         return label
     }()
-    let image = {
-        let image = UIImageView()
-        image.image = UIImage(systemName: "background")
-        return image
+    let mapView = {
+        let mapView = MKMapView()
+        
+        return mapView
     }()
     
     override func configureHierarchy() {
         super.configureHierarchy()
         contentView.addSubview(title)
-        contentView.addSubview(image)
+        contentView.addSubview(mapView)
     }
     
     override func configureLayout() {
@@ -32,11 +32,11 @@ final class MapCell: BaseTableViewCell {
         title.snp.makeConstraints {
             $0.top.horizontalEdges.equalTo(contentView)
         }
-        image.snp.makeConstraints {
+        mapView.snp.makeConstraints {
             $0.width.equalTo(contentView)
                 .multipliedBy(0.6)
             $0.centerX.equalTo(contentView.snp.centerX)
-            $0.height.equalTo(image.snp.width)
+            $0.height.equalTo(mapView.snp.width)
             $0.top.equalTo(title.snp.bottom)
         }
     }
@@ -44,6 +44,7 @@ final class MapCell: BaseTableViewCell {
     override func configureUI() {
         super.configureUI()
         
-        image.backgroundColor = .systemBlue
+        mapView.backgroundColor = .systemBlue
+        mapView.layer.cornerRadius = 8
     }
 }

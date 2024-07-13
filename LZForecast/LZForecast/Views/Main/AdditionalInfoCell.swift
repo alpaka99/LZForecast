@@ -8,7 +8,12 @@
 import UIKit
 
 final class AdditionalInfoCell: BaseTableViewCell {
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionView.flowLayout(spacing: 10, numberOfCellsInRow: 2))
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionView.flowLayout(
+        spacing: 10,
+        numberOfCellsInRow: 2,
+        heightMultiplier: 1,
+        scrollDirection: .vertical
+    ))
     
     
     override func configureHierarchy() {
@@ -24,7 +29,11 @@ final class AdditionalInfoCell: BaseTableViewCell {
         collectionView.snp.makeConstraints {
             $0.edges.equalTo(contentView)
         }
+    }
+    
+    override func configureUI() {
+        super.configureUI()
         
-        
+        collectionView.backgroundColor = .clear
     }
 }

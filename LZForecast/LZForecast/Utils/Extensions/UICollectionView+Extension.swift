@@ -8,7 +8,7 @@
 import UIKit
 
 extension UICollectionView {
-    static func flowLayout(spacing: CGFloat, numberOfCellsInRow: CGFloat, heightMultiplier: CGFloat = 1, scrollDirection: ScrollDirection = .horizontal) -> UICollectionViewFlowLayout {
+    static func flowLayout(spacing: CGFloat, numberOfCellsInRow: CGFloat, heightMultiplier: CGFloat = 1, scrollDirection: ScrollDirection = .vertical) -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = spacing

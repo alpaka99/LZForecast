@@ -26,6 +26,7 @@ final class MainViewController: BaseViewController<MainView> {
         baseView.tableView.register(ThreeHourForecastCell.self, forCellReuseIdentifier: ThreeHourForecastCell.identifier)
         baseView.tableView.register(FiveDayForecastCell.self, forCellReuseIdentifier: FiveDayForecastCell.identifier)
         baseView.tableView.register(MapCell.self, forCellReuseIdentifier: MapCell.identifier)
+        baseView.tableView.register(AdditionalInfoCell.self, forCellReuseIdentifier: AdditionalInfoCell.identifier)
     }
     
     @objc
@@ -34,6 +35,7 @@ final class MainViewController: BaseViewController<MainView> {
     }
     
     @objc
+    
     func bulletListButtonTapped() {
         print(#function)
     }
@@ -66,11 +68,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             case .threeHourForecast:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ThreeHourForecastCell.identifier, for: indexPath) as? ThreeHourForecastCell else { return UITableViewCell() }
-//                cell.backgroundColor = .orange
                 cell.collectionView.delegate = self
                 cell.collectionView.dataSource = self
                 cell.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifier)
-                
+                cell.collectionView.tag = indexPath.section
                 return cell
             case .fiveHourForecast:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: FiveDayForecastCell.identifier, for: indexPath) as? FiveDayForecastCell else { return UITableViewCell() }
@@ -81,6 +82,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             case .map:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: MapCell.identifier, for: indexPath) as? MapCell else { return UITableViewCell() }
+                return cell
+            case .additinalInfo:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: AdditionalInfoCell.identifier, for: indexPath) as? AdditionalInfoCell else { return UITableViewCell() }
+                cell.collectionView.delegate = self
+                cell.collectionView.dataSource = self
+                cell.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifier)
+                cell.collectionView.tag = indexPath.section
                 return cell
             }
         } else {
@@ -97,7 +105,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView == baseView.tableView {
-            return 200
+            return 300
         } else {
             return UITableView.automaticDimension
         }
@@ -110,7 +118,13 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        if collectionView.tag == 1 {
+            return 8
+        } else if collectionView.tag == 4 {
+            return 4
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -130,4 +144,5 @@ enum MainViewCellType: CaseIterable {
     case threeHourForecast
     case fiveHourForecast
     case map
+    case additinalInfo
 }
