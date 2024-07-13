@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CEB45A802C42AE0000327314 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A7F2C42AE0000327314 /* MapCell.swift */; };
 		CEB45A822C42B31400327314 /* AdditionalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A812C42B31400327314 /* AdditionalInfoCell.swift */; };
+		CEB45A852C42C62600327314 /* ThreeHourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A842C42C62600327314 /* ThreeHourCollectionViewCell.swift */; };
 		CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */; };
 		CED1E1A82C3E79A5004BFBE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */; };
 		CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		CEB45A7F2C42AE0000327314 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
 		CEB45A812C42B31400327314 /* AdditionalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoCell.swift; sourceTree = "<group>"; };
+		CEB45A842C42C62600327314 /* ThreeHourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeHourCollectionViewCell.swift; sourceTree = "<group>"; };
 		CED1E1A22C3E79A5004BFBE1 /* LZForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEB45A832C42C61000327314 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45A842C42C62600327314 /* ThreeHourCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		CED1E1992C3E79A5004BFBE1 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +173,7 @@
 		CED1E1C72C3F46B3004BFBE1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				CEB45A832C42C61000327314 /* Cell */,
 				CED1E1E02C3FEC57004BFBE1 /* MainViewController.swift */,
 				CED1E1E22C3FEC5B004BFBE1 /* MainView.swift */,
 				CED1E1E72C3FEE6D004BFBE1 /* CityInfoCell.swift */,
@@ -293,6 +304,7 @@
 				CED1E1E12C3FEC57004BFBE1 /* MainViewController.swift in Sources */,
 				CED1E1EA2C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift in Sources */,
 				CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */,
+				CEB45A852C42C62600327314 /* ThreeHourCollectionViewCell.swift in Sources */,
 				CED1E1C92C3F46B9004BFBE1 /* CompositionalView.swift in Sources */,
 				CED1E1EF2C3FF66D004BFBE1 /* ScreenSize.swift in Sources */,
 				CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */,
