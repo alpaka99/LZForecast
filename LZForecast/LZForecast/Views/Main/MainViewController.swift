@@ -70,6 +70,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ThreeHourForecastCell.identifier, for: indexPath) as? ThreeHourForecastCell else { return UITableViewCell() }
                 cell.collectionView.delegate = self
                 cell.collectionView.dataSource = self
+                cell.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifier)
                 cell.collectionView.register(ThreeHourCollectionViewCell.self, forCellWithReuseIdentifier: ThreeHourCollectionViewCell.identifier)
                 cell.collectionView.tag = indexPath.section
                 return cell
@@ -88,6 +89,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.collectionView.delegate = self
                 cell.collectionView.dataSource = self
                 cell.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifier)
+                cell.collectionView.register(AdditionalInfoCollectionViewCell.self, forCellWithReuseIdentifier: AdditionalInfoCollectionViewCell.identifier)
                 cell.collectionView.tag = indexPath.section
                 return cell
             }
@@ -129,11 +131,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.identifier, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThreeHourCollectionViewCell.identifier, for: indexPath)
             cell.backgroundColor = .orange
             return cell
         } else if collectionView.tag == 4 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.identifier, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdditionalInfoCollectionViewCell.identifier, for: indexPath)
             cell.backgroundColor = .orange
             return cell
         } else {

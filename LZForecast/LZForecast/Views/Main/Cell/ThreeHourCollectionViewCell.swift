@@ -15,14 +15,20 @@ final class ThreeHourCollectionViewCell: BaseCollectionViewCell {
         label.font = .systemFont(ofSize: 16)
         label.textColor = .white
         label.text = "12시"
+        label.textAlignment = .center
         return label
     }()
-    let icon = UIImageView()
+    let icon = {
+        let icon = UIImageView()
+        icon.image = UIImage(systemName: "star")
+        return icon
+    }()
     let degree = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16)
         label.textColor = .white
         label.text = "12º"
+        label.textAlignment = .center
         return label
     }()
     
