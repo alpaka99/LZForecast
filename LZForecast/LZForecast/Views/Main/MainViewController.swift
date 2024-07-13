@@ -13,6 +13,12 @@ final class MainViewController: BaseViewController<MainView> {
     
     let cellTypes = MainViewCellType.allCases
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        WeatherAPIManager.shared.requestWeather(type: .current(.coordinate(Coordinate.baseLat, Coordinate.baseLon)))
+    }
+    
     override func configureDelegate() {
         super.configureDelegate()
         
