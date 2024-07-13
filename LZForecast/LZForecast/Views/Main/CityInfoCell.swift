@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class CityInfoView: BaseTableViewCell {
+final class CityInfoCell: BaseTableViewCell {
     let cityName = {
         let label = UILabel()
         label.textColor = .white

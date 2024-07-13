@@ -46,6 +46,6 @@ final class ThreeHourForecastCell: BaseTableViewCell {
     
     override func configureUI() {
         super.configureUI()
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .clear
     }
 }

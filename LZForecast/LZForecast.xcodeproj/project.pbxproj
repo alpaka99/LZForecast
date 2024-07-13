@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CEB45A7E2C41785300327314 /* SelfSizingCollecitonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A7D2C41785300327314 /* SelfSizingCollecitonView.swift */; };
+		CEB45A802C42AE0000327314 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A7F2C42AE0000327314 /* MapCell.swift */; };
+		CEB45A822C42B31400327314 /* AdditionalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A812C42B31400327314 /* AdditionalInfoCell.swift */; };
 		CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */; };
 		CED1E1A82C3E79A5004BFBE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */; };
 		CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */; };
@@ -24,7 +25,7 @@
 		CED1E1E12C3FEC57004BFBE1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1E02C3FEC57004BFBE1 /* MainViewController.swift */; };
 		CED1E1E32C3FEC5B004BFBE1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1E22C3FEC5B004BFBE1 /* MainView.swift */; };
 		CED1E1E62C3FED29004BFBE1 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1E52C3FED29004BFBE1 /* Reusable.swift */; };
-		CED1E1E82C3FEE6D004BFBE1 /* CityInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1E72C3FEE6D004BFBE1 /* CityInfoView.swift */; };
+		CED1E1E82C3FEE6D004BFBE1 /* CityInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1E72C3FEE6D004BFBE1 /* CityInfoCell.swift */; };
 		CED1E1EA2C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1E92C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift */; };
 		CED1E1EC2C3FF54D004BFBE1 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1EB2C3FF54D004BFBE1 /* UICollectionView+Extension.swift */; };
 		CED1E1EF2C3FF66D004BFBE1 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1EE2C3FF66D004BFBE1 /* ScreenSize.swift */; };
@@ -33,7 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CEB45A7D2C41785300327314 /* SelfSizingCollecitonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingCollecitonView.swift; sourceTree = "<group>"; };
+		CEB45A7F2C42AE0000327314 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
+		CEB45A812C42B31400327314 /* AdditionalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoCell.swift; sourceTree = "<group>"; };
 		CED1E1A22C3E79A5004BFBE1 /* LZForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 		CED1E1E02C3FEC57004BFBE1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CED1E1E22C3FEC5B004BFBE1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CED1E1E52C3FED29004BFBE1 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		CED1E1E72C3FEE6D004BFBE1 /* CityInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoView.swift; sourceTree = "<group>"; };
+		CED1E1E72C3FEE6D004BFBE1 /* CityInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoCell.swift; sourceTree = "<group>"; };
 		CED1E1E92C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeHourForecastCell.swift; sourceTree = "<group>"; };
 		CED1E1EB2C3FF54D004BFBE1 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		CED1E1EE2C3FF66D004BFBE1 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
@@ -163,10 +165,11 @@
 			children = (
 				CED1E1E02C3FEC57004BFBE1 /* MainViewController.swift */,
 				CED1E1E22C3FEC5B004BFBE1 /* MainView.swift */,
-				CED1E1E72C3FEE6D004BFBE1 /* CityInfoView.swift */,
+				CED1E1E72C3FEE6D004BFBE1 /* CityInfoCell.swift */,
 				CED1E1E92C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift */,
 				CED1E1F22C4009EC004BFBE1 /* FiveDayForecastCell.swift */,
-				CEB45A7D2C41785300327314 /* SelfSizingCollecitonView.swift */,
+				CEB45A7F2C42AE0000327314 /* MapCell.swift */,
+				CEB45A812C42B31400327314 /* AdditionalInfoCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -285,7 +288,8 @@
 				CED1E1EC2C3FF54D004BFBE1 /* UICollectionView+Extension.swift in Sources */,
 				CED1E1BD2C3E7FB4004BFBE1 /* BaseViewController.swift in Sources */,
 				CED1E1E32C3FEC5B004BFBE1 /* MainView.swift in Sources */,
-				CED1E1E82C3FEE6D004BFBE1 /* CityInfoView.swift in Sources */,
+				CED1E1E82C3FEE6D004BFBE1 /* CityInfoCell.swift in Sources */,
+				CEB45A802C42AE0000327314 /* MapCell.swift in Sources */,
 				CED1E1E12C3FEC57004BFBE1 /* MainViewController.swift in Sources */,
 				CED1E1EA2C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift in Sources */,
 				CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */,
@@ -295,7 +299,7 @@
 				CED1E1E62C3FED29004BFBE1 /* Reusable.swift in Sources */,
 				CED1E1F12C3FFD9D004BFBE1 /* BaseCollectionViewCell.swift in Sources */,
 				CED1E1A82C3E79A5004BFBE1 /* SceneDelegate.swift in Sources */,
-				CEB45A7E2C41785300327314 /* SelfSizingCollecitonView.swift in Sources */,
+				CEB45A822C42B31400327314 /* AdditionalInfoCell.swift in Sources */,
 				CED1E1CE2C3F49C6004BFBE1 /* UIButton+Extension.swift in Sources */,
 				CED1E1C62C3E86B6004BFBE1 /* Observable.swift in Sources */,
 				CED1E1BB2C3E7F41004BFBE1 /* BaseView.swift in Sources */,

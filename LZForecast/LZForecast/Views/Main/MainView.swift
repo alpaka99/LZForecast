@@ -18,8 +18,6 @@ final class MainView: BaseView {
         return image
     }()
     
-    let cityInfo = CityInfoView()
-    
     
     let mapButton = {
         var button = UIButton()
@@ -81,6 +79,7 @@ final class MainView: BaseView {
     override func configureUI() {
         super.configureUI()
         
+        tableView.backgroundColor = .clear
         tableView.allowsSelection = false
     }
 }

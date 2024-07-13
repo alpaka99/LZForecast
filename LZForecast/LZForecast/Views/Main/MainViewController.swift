@@ -22,9 +22,10 @@ final class MainViewController: BaseViewController<MainView> {
         baseView.tableView.delegate = self
         baseView.tableView.dataSource = self
         baseView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.identifier)
-        baseView.tableView.register(CityInfoView.self, forCellReuseIdentifier: CityInfoView.identifier)
+        baseView.tableView.register(CityInfoCell.self, forCellReuseIdentifier: CityInfoCell.identifier)
         baseView.tableView.register(ThreeHourForecastCell.self, forCellReuseIdentifier: ThreeHourForecastCell.identifier)
         baseView.tableView.register(FiveDayForecastCell.self, forCellReuseIdentifier: FiveDayForecastCell.identifier)
+        baseView.tableView.register(MapCell.self, forCellReuseIdentifier: MapCell.identifier)
     }
     
     @objc
@@ -61,11 +62,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let cellType = cellTypes[indexPath.section]
             switch cellType {
             case .cityInfo:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: CityInfoView.identifier, for: indexPath) as? CityInfoView else { return UITableViewCell() }
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: CityInfoCell.identifier, for: indexPath) as? CityInfoCell else { return UITableViewCell() }
                 return cell
             case .threeHourForecast:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ThreeHourForecastCell.identifier, for: indexPath) as? ThreeHourForecastCell else { return UITableViewCell() }
-                cell.backgroundColor = .orange
+//                cell.backgroundColor = .orange
                 cell.collectionView.delegate = self
                 cell.collectionView.dataSource = self
                 cell.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifier)
@@ -78,11 +79,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.tableView.dataSource = self
                 cell.tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.identifier)
                 return cell
+            case .map:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: MapCell.identifier, for: indexPath) as? MapCell else { return UITableViewCell() }
+                return cell
             }
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.identifier, for: indexPath) as UITableViewCell
             cell.textLabel?.text = "plz"
-            cell.backgroundColor = .systemPink
+            cell.backgroundColor = .clear
             return cell
         }
     }
@@ -112,7 +116,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.identifier, for: indexPath)
         cell.backgroundColor = .orange
-        
         return cell
     }
     
@@ -126,4 +129,5 @@ enum MainViewCellType: CaseIterable {
     case cityInfo
     case threeHourForecast
     case fiveHourForecast
+    case map
 }

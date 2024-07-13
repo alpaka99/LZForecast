@@ -1,29 +1,30 @@
 //
-//  FiveDayForecastCell.swift
+//  MapCell.swift
 //  LZForecast
 //
-//  Created by user on 7/11/24.
+//  Created by user on 7/13/24.
 //
 
 import UIKit
 
 import SnapKit
 
-final class FiveDayForecastCell: BaseTableViewCell {
+final class MapCell: BaseTableViewCell {
     let title = {
         let label = UILabel()
-        label.text = "5일 알림"
+        label.text = "위치"
         return label
     }()
-    
-    let tableView = UITableView()
+    let image = {
+        let image = UIImageView()
+        image.image = UIImage(systemName: "background")
+        return image
+    }()
     
     override func configureHierarchy() {
         super.configureHierarchy()
-        
         contentView.addSubview(title)
-        contentView.addSubview(tableView)
-        tableView.backgroundColor = .green
+        contentView.addSubview(image)
     }
     
     override func configureLayout() {
@@ -31,16 +32,18 @@ final class FiveDayForecastCell: BaseTableViewCell {
         title.snp.makeConstraints {
             $0.top.horizontalEdges.equalTo(contentView)
         }
-        tableView.snp.makeConstraints {
+        image.snp.makeConstraints {
+            $0.width.equalTo(contentView)
+                .multipliedBy(0.6)
+            $0.centerX.equalTo(contentView.snp.centerX)
+            $0.height.equalTo(image.snp.width)
             $0.top.equalTo(title.snp.bottom)
-            $0.horizontalEdges.equalTo(contentView)
-            $0.bottom.equalTo(contentView)
         }
     }
     
     override func configureUI() {
         super.configureUI()
         
-        tableView.backgroundColor = .clear
+        image.backgroundColor = .systemBlue
     }
 }
