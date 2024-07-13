@@ -77,4 +77,10 @@ final class MainView: BaseView {
             $0.size.equalTo(50)
         }
     }
+    
+    override func configureUI() {
+        super.configureUI()
+        
+        tableView.allowsSelection = false
+    }
 }

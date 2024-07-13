@@ -21,19 +21,20 @@ final class FiveDayForecastCell: BaseTableViewCell {
     override func configureHierarchy() {
         super.configureHierarchy()
         
-        self.addSubview(title)
-        self.addSubview(tableView)
+        contentView.addSubview(title)
+        contentView.addSubview(tableView)
         tableView.backgroundColor = .green
     }
     
     override func configureLayout() {
         super.configureLayout()
         title.snp.makeConstraints {
-            $0.top.horizontalEdges.equalTo(self)
+            $0.top.horizontalEdges.equalTo(contentView)
         }
         tableView.snp.makeConstraints {
             $0.top.equalTo(title.snp.bottom)
-            $0.horizontalEdges.equalTo(self)
+            $0.horizontalEdges.equalTo(contentView)
+            $0.bottom.equalTo(contentView)
         }
     }
     
