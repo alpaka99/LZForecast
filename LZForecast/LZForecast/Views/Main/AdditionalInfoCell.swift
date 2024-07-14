@@ -7,14 +7,13 @@
 
 import UIKit
 
-final class AdditionalInfoCell: BaseTableViewCell {
+final class AdditionalInfoView: BaseTableViewCell {
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionView.flowLayout(
         spacing: 10,
         numberOfCellsInRow: 2,
         heightMultiplier: 1,
         scrollDirection: .vertical
     ))
-    
     
     override func configureHierarchy() {
         super.configureHierarchy()

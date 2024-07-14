@@ -69,7 +69,6 @@ final class ThreeHourCollectionViewCell: BaseCollectionViewCell {
     }
     
     func configureData(_ data: ThreeHourForecast) {
-        print(#function)
         time.text = "\(data.time.formatted())시"
         if let url = URL(string: "https://openweathermap.org/img/wn/\(data.iconName)@2x.png") {
             icon.kf.setImage(with: url)

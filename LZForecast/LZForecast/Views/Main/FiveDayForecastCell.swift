@@ -44,5 +44,6 @@ final class FiveDayForecastView: BaseView {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
+        tableView.showsVerticalScrollIndicator = false
     }
 }

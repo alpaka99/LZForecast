@@ -47,5 +47,6 @@ final class ThreeHourForecastView: BaseView {
     override func configureUI() {
         super.configureUI()
         collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
     }
 }

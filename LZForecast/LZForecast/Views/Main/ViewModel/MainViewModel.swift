@@ -15,6 +15,7 @@ final class MainViewModel {
     var outPutCityInfo = Observable(CityInfo(cityName: "", currentTemp: 0.0, forecastStatus: "", maxTemp: 0.0, minTemp: 0.0))
     var outputThreeHourForecast = Observable([ThreeHourForecast]())
     var outputFiveDayForecast = Observable([FiveDayForecast]())
+    var outputMapCoordinate = Observable(Coordinate(lat: 0, lon: 0))
     
     init() {
         inputWeatherCurrentResponse.bind { [weak self] _ in
@@ -37,7 +38,13 @@ final class MainViewModel {
             minTemp: inputWeatherCurrentResponse.value.main.temp_min
         )
         
+        let coord = Coordinate(
+            lat: inputWeatherCurrentResponse.value.coord.lat,
+            lon: inputWeatherCurrentResponse.value.coord.lon
+        )
+        
         outPutCityInfo.value = cityInfo
+        outputMapCoordinate.value = coord
     }
     
     func convertForecast() {
@@ -67,7 +74,7 @@ final class MainViewModel {
                 
                 let forecast = FiveDayForecast(
                     weekDay: weekDay,
-                    icon: data.weather.first?.icon ?? "",
+                    iconName: data.weather.first?.icon ?? "",
                     minDegree: Int(data.main?.temp_max ?? 0),
                     maxDegree: Int(data.main?.temp_min ?? 0)
                 )

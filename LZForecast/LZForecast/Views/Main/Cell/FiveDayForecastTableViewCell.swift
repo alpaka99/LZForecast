@@ -51,6 +51,7 @@ final class FiveDayForecastTableViewCell: BaseTableViewCell {
         icon.snp.makeConstraints {
             $0.leading.equalTo(weekday.snp.trailing)
                 .offset(8)
+            $0.size.equalTo(50)
             $0.verticalEdges.equalTo(contentView)
                 .offset(8)
         }
@@ -70,11 +71,18 @@ final class FiveDayForecastTableViewCell: BaseTableViewCell {
         }
     }
     
+    override func configureUI() {
+        super.configureUI()
+        
+        contentView.backgroundColor = .black.withAlphaComponent(0.3)
+    }
+    
     internal func configureData(_ data: FiveDayForecast) {
-        print(#function)
         weekday.text = data.weekDay
-        icon.image = UIImage(systemName: data.icon)
-        minDegree.text = data.minDegree.formatted()
-        maxDegree.text = data.maxDegree.formatted()
+        if let url = URL(string: "https://openweathermap.org/img/wn/\(data.iconName)@2x.png") {
+            icon.kf.setImage(with: url)
+        }
+        minDegree.text = (data.minDegree-275).formatted()
+        maxDegree.text = (data.maxDegree-275).formatted()
     }
 }

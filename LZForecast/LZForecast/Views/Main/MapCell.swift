@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class MapCell: BaseTableViewCell {
+final class MapCellView: BaseTableViewCell {
     let title = {
         let label = UILabel()
         label.text = "위치"
@@ -53,7 +53,18 @@ final class MapCell: BaseTableViewCell {
     override func configureUI() {
         super.configureUI()
         
-        mapView.backgroundColor = .systemBlue
         mapView.layer.cornerRadius = 8
+        mapView.isScrollEnabled = false
+    }
+    
+    func configureData(_ data: Coordinate) {
+        let region = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(
+                latitude: data.lat,
+                longitude: data.lon),
+            latitudinalMeters: 200,
+            longitudinalMeters: 200
+        )
+        mapView.region = region
     }
 }

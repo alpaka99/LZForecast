@@ -81,8 +81,8 @@ final class CityInfoView: BaseView {
     
     func configureData(_ data: CityInfo) {
         cityName.text = data.cityName
-        currentTemperature.text = String(data.currentTemp)
+        currentTemperature.text = "\(Int(data.currentTemp))Cº"
         forecastStatus.text = data.forecastStatus.description
-        minMaxTemperature.text = "최고: \(data.maxTemp-275)º | 최저: \(data.minTemp-275)º"
+        minMaxTemperature.text = "최고: \(Int(data.maxTemp-275))º | 최저: \(Int(data.minTemp-275))º"
     }
 }

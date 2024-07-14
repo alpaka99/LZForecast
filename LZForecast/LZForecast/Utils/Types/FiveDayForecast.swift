@@ -7,7 +7,7 @@
 
 struct FiveDayForecast {
     let weekDay: String
-    let icon: String
+    let iconName: String
     let minDegree: Int
     let maxDegree: Int
 }

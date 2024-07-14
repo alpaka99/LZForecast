@@ -19,6 +19,8 @@ final class MainView: BaseView {
     let cityInfoView = CityInfoView()
     let threeHourForecastView = ThreeHourForecastView()
     let fiveDayForecastView = FiveDayForecastView()
+    let mapCellView = MapCellView()
+    let additionalInfo = AdditionalInfoView()
     
     let contentView = {
         let view = UIView()
@@ -57,12 +59,14 @@ final class MainView: BaseView {
         contentView.addSubview(cityInfoView)
         contentView.addSubview(threeHourForecastView)
         contentView.addSubview(fiveDayForecastView)
+        contentView.addSubview(mapCellView)
+        contentView.addSubview(additionalInfo)
         
         scrollView.addSubview(contentView)
         
-        background.addSubview(scrollView)
-        background.addSubview(mapButton)
-        background.addSubview(bulletListButton)
+        self.addSubview(scrollView)
+        self.addSubview(mapButton)
+        self.addSubview(bulletListButton)
     }
     
     override func configureLayout() {
@@ -88,16 +92,27 @@ final class MainView: BaseView {
         threeHourForecastView.snp.makeConstraints {
             $0.top.equalTo(cityInfoView.snp.bottom)
             $0.horizontalEdges.equalTo(contentView)
-            $0.height.equalTo(300)
+            $0.height.equalTo(200)
         }
         
         fiveDayForecastView.snp.makeConstraints {
             $0.top.equalTo(threeHourForecastView.snp.bottom)
             $0.horizontalEdges.equalTo(contentView)
-            $0.height.equalTo(500)
-            $0.bottom.equalTo(scrollView)
+            $0.height.equalTo(300)
         }
         
+        mapCellView.snp.makeConstraints {
+            $0.top.equalTo(fiveDayForecastView.snp.bottom)
+            $0.horizontalEdges.equalTo(contentView)
+            $0.height.equalTo(300)
+        }
+        
+        additionalInfo.snp.makeConstraints {
+            $0.top.equalTo(mapCellView.snp.bottom)
+            $0.horizontalEdges.equalTo(contentView)
+            $0.height.equalTo(200)
+            $0.bottom.equalTo(scrollView)
+        }
         
         scrollView.snp.makeConstraints {
             $0.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
@@ -121,6 +136,6 @@ final class MainView: BaseView {
     
     override func configureUI() {
         super.configureUI()
-        
+        scrollView.showsVerticalScrollIndicator = false
     }
 }
