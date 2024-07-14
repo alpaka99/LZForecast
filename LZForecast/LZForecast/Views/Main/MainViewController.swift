@@ -44,6 +44,11 @@ final class MainViewController: BaseViewController<MainView> {
     override func bindData() {
         super.bindData()
         
+        viewModel.inputSearchButtonTapped.bind { [weak self] _ in
+            let vc = SearchCityViewController(baseView: SearchCityView())
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         viewModel.outPutCityInfo.bind { [weak self] value in
             self?.baseView.cityInfoView.configureData(value)
         }
@@ -69,7 +74,7 @@ final class MainViewController: BaseViewController<MainView> {
     @objc
     
     func bulletListButtonTapped() {
-        print(#function)
+        viewModel.inputSearchButtonTapped.value = ()
     }
     
     override func configureNavigationItem() {
