@@ -33,8 +33,17 @@ final class MainViewController: BaseViewController<MainView> {
         super.bindData()
         
         viewModel.outPutCityInfo.bind { [weak self] _ in
-            print("Triggered")
             self?.baseView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+        }
+        
+        viewModel.outputThreeHourForecast.bind { [weak self] value in
+            print(value.count)
+            self?.baseView.tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .automatic)
+        }
+        
+        viewModel.outputFiveDayForecast.bind { [weak self] value in
+            print(value.count)
+            self?.baseView.tableView.reloadRows(at: [IndexPath(row: 2, section: 0)], with: .automatic)
         }
     }
     
@@ -58,8 +67,8 @@ final class MainViewController: BaseViewController<MainView> {
             self?.viewModel.inputWeatherCurrentResponse.value = response
         }
         
-        WeatherAPIManager.shared.requestWeather(type: .forecast(.coordinate(ConstCoordinate.baseLat, ConstCoordinate.baseLon)), responseType: WeatherForecastResponse.self) { response in
-            print(response.list.count)
+        WeatherAPIManager.shared.requestWeather(type: .forecast(.coordinate(ConstCoordinate.baseLat, ConstCoordinate.baseLon)), responseType: WeatherForecastResponse.self) { [weak self] response in
+            self?.viewModel.inputWeatherForecastResponse.value = response
         }
     }
     
@@ -71,15 +80,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == baseView.tableView {
+        if tableView.tag == 0 {
             return 1
         } else {
-            return 10
+            return viewModel.outputFiveDayForecast.value.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == baseView.tableView {
+        if tableView.tag == 0 {
             let cellType = viewModel.cellTypes[indexPath.section]
             switch cellType {
             case .cityInfo:
@@ -96,10 +105,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             case .fiveHourForecast:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: FiveDayForecastCell.identifier, for: indexPath) as? FiveDayForecastCell else { return UITableViewCell() }
-                
                 cell.tableView.delegate = self
                 cell.tableView.dataSource = self
                 cell.tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.identifier)
+                cell.tableView.tag = indexPath.section
                 return cell
             case .map:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: MapCell.identifier, for: indexPath) as? MapCell else { return UITableViewCell() }
@@ -141,7 +150,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
-            return 8
+            return viewModel.outputThreeHourForecast.value.count
         } else if collectionView.tag == 4 {
             return 4
         } else {
@@ -151,8 +160,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThreeHourCollectionViewCell.identifier, for: indexPath)
-            cell.backgroundColor = .orange
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThreeHourCollectionViewCell.identifier, for: indexPath) as? ThreeHourCollectionViewCell else { return UICollectionViewCell() }
+            let data = viewModel.outputThreeHourForecast.value[indexPath.row]
+            cell.configureData(data)
             return cell
         } else if collectionView.tag == 4 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdditionalInfoCollectionViewCell.identifier, for: indexPath)
