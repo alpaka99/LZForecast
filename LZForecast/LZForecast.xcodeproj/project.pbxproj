@@ -26,6 +26,7 @@
 		CEB45AA72C44247B00327314 /* FiveDayForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA62C44247B00327314 /* FiveDayForecastTableViewCell.swift */; };
 		CEB45ACF2C44579A00327314 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CEB45ACE2C44579A00327314 /* Kingfisher */; };
 		CEB45AD12C446AC900327314 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AD02C446AC900327314 /* Weekday.swift */; };
+		CEB45AD52C446DF100327314 /* CityList.json in Resources */ = {isa = PBXBuildFile; fileRef = CEB45AD42C446DF100327314 /* CityList.json */; };
 		CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */; };
 		CED1E1A82C3E79A5004BFBE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */; };
 		CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */; };
@@ -68,6 +69,7 @@
 		CEB45AA42C44139900327314 /* FiveDayForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayForecast.swift; sourceTree = "<group>"; };
 		CEB45AA62C44247B00327314 /* FiveDayForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayForecastTableViewCell.swift; sourceTree = "<group>"; };
 		CEB45AD02C446AC900327314 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		CEB45AD42C446DF100327314 /* CityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityList.json; sourceTree = "<group>"; };
 		CED1E1A22C3E79A5004BFBE1 /* LZForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,21 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CEB45AD22C446CCE00327314 /* SearchCity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchCity;
+			sourceTree = "<group>";
+		};
+		CEB45AD32C446DE600327314 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45AD42C446DF100327314 /* CityList.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		CED1E1992C3E79A5004BFBE1 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +235,7 @@
 			children = (
 				CED1E1DF2C3FEC44004BFBE1 /* Compositional(Test) */,
 				CED1E1C72C3F46B3004BFBE1 /* Main */,
+				CEB45AD22C446CCE00327314 /* SearchCity */,
 				CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */,
 			);
 			path = Views;
@@ -237,6 +255,7 @@
 				CEB45A8E2C42FE7E00327314 /* APIKeys */,
 				CEB45A942C43C3F600327314 /* Builders */,
 				CED1E1ED2C3FF664004BFBE1 /* Constants */,
+				CEB45AD32C446DE600327314 /* Data */,
 				CED1E1CC2C3F49BC004BFBE1 /* Extensions */,
 				CEB45A882C42F4A500327314 /* Managers */,
 				CED1E1C42C3E86AF004BFBE1 /* Observable */,
@@ -374,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED1E1AF2C3E79A7004BFBE1 /* Assets.xcassets in Resources */,
+				CEB45AD52C446DF100327314 /* CityList.json in Resources */,
 				CED1E1B22C3E79A7004BFBE1 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
