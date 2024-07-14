@@ -33,9 +33,11 @@
 		CEB45ADD2C4473F500327314 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45ADC2C4473F500327314 /* City.swift */; };
 		CEB45AE02C44742100327314 /* SearchCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45ADF2C44742100327314 /* SearchCityViewModel.swift */; };
 		CEB45AE22C4474B300327314 /* SearchCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AE12C4474B300327314 /* SearchCityCell.swift */; };
+		CEB45AE52C4483E900327314 /* MapSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AE42C4483E900327314 /* MapSearchView.swift */; };
+		CEB45AE72C4483FD00327314 /* MapSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AE62C4483FD00327314 /* MapSearchViewController.swift */; };
+		CEB45AEA2C448A4900327314 /* MapSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AE92C448A4900327314 /* MapSearchViewModel.swift */; };
 		CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */; };
 		CED1E1A82C3E79A5004BFBE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */; };
-		CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */; };
 		CED1E1AF2C3E79A7004BFBE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED1E1AE2C3E79A7004BFBE1 /* Assets.xcassets */; };
 		CED1E1B22C3E79A7004BFBE1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CED1E1B12C3E79A7004BFBE1 /* Base */; };
 		CED1E1BB2C3E7F41004BFBE1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1BA2C3E7F41004BFBE1 /* BaseView.swift */; };
@@ -82,10 +84,12 @@
 		CEB45ADC2C4473F500327314 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		CEB45ADF2C44742100327314 /* SearchCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewModel.swift; sourceTree = "<group>"; };
 		CEB45AE12C4474B300327314 /* SearchCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityCell.swift; sourceTree = "<group>"; };
+		CEB45AE42C4483E900327314 /* MapSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchView.swift; sourceTree = "<group>"; };
+		CEB45AE62C4483FD00327314 /* MapSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewController.swift; sourceTree = "<group>"; };
+		CEB45AE92C448A4900327314 /* MapSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewModel.swift; sourceTree = "<group>"; };
 		CED1E1A22C3E79A5004BFBE1 /* LZForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CED1E1AE2C3E79A7004BFBE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CED1E1B12C3E79A7004BFBE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CED1E1B32C3E79A7004BFBE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -206,6 +210,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CEB45AE32C4483D300327314 /* MapSearch */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45AE82C448A3E00327314 /* MapSearchViewModel */,
+				CEB45AE42C4483E900327314 /* MapSearchView.swift */,
+				CEB45AE62C4483FD00327314 /* MapSearchViewController.swift */,
+			);
+			path = MapSearch;
+			sourceTree = "<group>";
+		};
+		CEB45AE82C448A3E00327314 /* MapSearchViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEB45AE92C448A4900327314 /* MapSearchViewModel.swift */,
+			);
+			path = MapSearchViewModel;
+			sourceTree = "<group>";
+		};
 		CED1E1992C3E79A5004BFBE1 = {
 			isa = PBXGroup;
 			children = (
@@ -261,8 +283,8 @@
 			children = (
 				CED1E1DF2C3FEC44004BFBE1 /* Compositional(Test) */,
 				CED1E1C72C3F46B3004BFBE1 /* Main */,
+				CEB45AE32C4483D300327314 /* MapSearch */,
 				CEB45AD22C446CCE00327314 /* SearchCity */,
-				CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -443,7 +465,6 @@
 				CED1E1E12C3FEC57004BFBE1 /* MainViewController.swift in Sources */,
 				CED1E1EA2C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift in Sources */,
 				CEB45A922C43015200327314 /* Coordinate.swift in Sources */,
-				CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */,
 				CEB45A852C42C62600327314 /* ThreeHourCollectionViewCell.swift in Sources */,
 				CEB45AA72C44247B00327314 /* FiveDayForecastTableViewCell.swift in Sources */,
 				CED1E1C92C3F46B9004BFBE1 /* CompositionalView.swift in Sources */,
@@ -451,9 +472,11 @@
 				CEB45AA12C43E10F00327314 /* CityInfo.swift in Sources */,
 				CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */,
 				CEB45AE02C44742100327314 /* SearchCityViewModel.swift in Sources */,
+				CEB45AEA2C448A4900327314 /* MapSearchViewModel.swift in Sources */,
 				CED1E1E62C3FED29004BFBE1 /* Reusable.swift in Sources */,
 				CEB45AD72C446E7900327314 /* FileManager.swift in Sources */,
 				CEB45AA32C44136C00327314 /* ThreeHourForecast.swift in Sources */,
+				CEB45AE72C4483FD00327314 /* MapSearchViewController.swift in Sources */,
 				CEB45A8A2C42F4C300327314 /* WeatherAPIManager.swift in Sources */,
 				CED1E1F12C3FFD9D004BFBE1 /* BaseCollectionViewCell.swift in Sources */,
 				CED1E1A82C3E79A5004BFBE1 /* SceneDelegate.swift in Sources */,
@@ -473,6 +496,7 @@
 				CED1E1CB2C3F46CF004BFBE1 /* CompositionalViewController.swift in Sources */,
 				CEB45AE22C4474B300327314 /* SearchCityCell.swift in Sources */,
 				CEB45A9F2C43DE1700327314 /* MainViewModel.swift in Sources */,
+				CEB45AE52C4483E900327314 /* MapSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

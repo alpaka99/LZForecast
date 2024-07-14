@@ -52,6 +52,11 @@ final class MainViewController: BaseViewController<MainView> {
             self?.navigationController?.pushViewController(vc, animated: true)
         }
         
+        viewModel.inputMapButtonTapped.bind { [weak self] _ in
+            let vc = MapSearchViewController(baseView: MapSearchView())
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         viewModel.outPutCityInfo.bind { [weak self] value in
             self?.baseView.cityInfoView.configureData(value)
         }
@@ -71,7 +76,7 @@ final class MainViewController: BaseViewController<MainView> {
     
     @objc
     func mapButtonTapped() {
-        
+        viewModel.inputMapButtonTapped.value = ()
     }
     
     @objc
