@@ -34,7 +34,7 @@ final class MainView: BaseView {
         var button = UIButton()
         
         var config = UIButton.Configuration.plain()
-        config.image = UIImage(systemName: "star")
+        config.image = UIImage(systemName: "map")
         
         button.configuration = config
         
@@ -45,7 +45,7 @@ final class MainView: BaseView {
         var button = UIButton()
         
         var config = UIButton.Configuration.plain()
-        config.image = UIImage(systemName: "person")
+        config.image = UIImage(systemName: "list.bullet")
         
         button.configuration = config
         

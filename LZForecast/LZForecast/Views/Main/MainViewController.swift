@@ -44,6 +44,14 @@ final class MainViewController: BaseViewController<MainView> {
     override func bindData() {
         super.bindData()
         
+        viewModel.inputSearchButtonTapped.bind { [weak self] _ in
+            let vc = SearchCityViewController(baseView: SearchCityView())
+            vc.searchClosure = { id in
+                self?.fetchWeatherData(requestType: .id(id))
+            }
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         viewModel.outPutCityInfo.bind { [weak self] value in
             self?.baseView.cityInfoView.configureData(value)
         }
@@ -69,19 +77,19 @@ final class MainViewController: BaseViewController<MainView> {
     @objc
     
     func bulletListButtonTapped() {
-        print(#function)
+        viewModel.inputSearchButtonTapped.value = ()
     }
     
     override func configureNavigationItem() {
         super.configureNavigationItem()
     }
     
-    func fetchWeatherData() {
-        WeatherAPIManager.shared.requestWeather(type: .current(.id(1835847)), responseType: WeatherCurrentResponse.self) {[weak self] response in
+    func fetchWeatherData(requestType: RequestDataType = .id(1835847)) {
+        WeatherAPIManager.shared.requestWeather(type: .current(requestType), responseType: WeatherCurrentResponse.self) {[weak self] response in
             self?.viewModel.inputWeatherCurrentResponse.value = response
         }
         
-        WeatherAPIManager.shared.requestWeather(type: .forecast(.id(1835847)), responseType: WeatherForecastResponse.self) { [weak self] response in
+        WeatherAPIManager.shared.requestWeather(type: .forecast(requestType), responseType: WeatherForecastResponse.self) { [weak self] response in
             self?.viewModel.inputWeatherForecastResponse.value = response
         }
     }

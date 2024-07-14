@@ -11,6 +11,7 @@ final class MainViewModel {
     let cellTypes = MainViewCellType.allCases
     var inputWeatherCurrentResponse = Observable(WeatherCurrentResponse(coord: Coordinate(lat: 0, lon: 0), weather: [], main: Main(temp: 0, temp_min: 0, temp_max: 0), wind: Wind(speed: 0, deg: 0, gust: 0), name: ""))
     var inputWeatherForecastResponse = Observable(WeatherForecastResponse(cod: "", message: 0, cnt: 0, list: []))
+    var inputSearchButtonTapped: Observable<Void?> = Observable(())
     
     var outPutCityInfo = Observable(CityInfo(cityName: "", currentTemp: 0.0, forecastStatus: "", maxTemp: 0.0, minTemp: 0.0))
     var outputThreeHourForecast = Observable([ThreeHourForecast]())
@@ -23,7 +24,6 @@ final class MainViewModel {
         }
         
         inputWeatherForecastResponse.bind { [weak self] _ in
-            print(#function)
             self?.convertForecast()
         }
     }
