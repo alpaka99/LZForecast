@@ -24,7 +24,6 @@ final class MainViewModel {
         }
         
         inputWeatherForecastResponse.bind { [weak self] _ in
-            print(#function)
             self?.convertForecast()
         }
     }

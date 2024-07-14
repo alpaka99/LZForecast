@@ -10,6 +10,7 @@ import UIKit
 final class SearchCityViewController: BaseViewController<SearchCityView> {
     
     let viewModel = SearchCityViewModel()
+    var searchClosure: ((Int)->Void)?
     
     override func configureDelegate() {
         super.configureDelegate()
@@ -49,5 +50,11 @@ extension SearchCityViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = viewModel.cityList[indexPath.row]
+        searchClosure?(data.id)
+        navigationController?.popViewController(animated: true)
     }
 }
