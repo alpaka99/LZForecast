@@ -22,28 +22,32 @@ final class SearchCityViewController: BaseViewController<SearchCityView> {
         baseView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.identifier)
         baseView.tableView.register(SearchCityCell.self, forCellReuseIdentifier: SearchCityCell.identifier)
         
-        fetchCityListInfo()
     }
     
-    func fetchCityListInfo() {
-        
+    
+    override func bindData() {
+        viewModel.filteredCityList.bind { [weak self] _ in
+            self?.baseView.tableView.reloadData()
+        }
     }
 }
 
 extension SearchCityViewController: UISearchBarDelegate {
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.inputSearchText.value = searchText
+    }
 }
 
 extension SearchCityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.cityList.count
+        return viewModel.filteredCityList.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchCityCell.identifier, for: indexPath) as? SearchCityCell else {
             return UITableViewCell()
         }
-        let data = viewModel.cityList[indexPath.row]
+        let data = viewModel.filteredCityList.value[indexPath.row]
         cell.configureData(data)
         return cell
     }
@@ -53,7 +57,7 @@ extension SearchCityViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = viewModel.cityList[indexPath.row]
+        let data = viewModel.filteredCityList.value[indexPath.row]
         searchClosure?(data.id)
         navigationController?.popViewController(animated: true)
     }
