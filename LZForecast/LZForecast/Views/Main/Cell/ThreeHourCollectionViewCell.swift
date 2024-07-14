@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Kingfisher
 import SnapKit
 
 final class ThreeHourCollectionViewCell: BaseCollectionViewCell {
@@ -58,5 +59,20 @@ final class ThreeHourCollectionViewCell: BaseCollectionViewCell {
             $0.horizontalEdges.equalTo(contentView)
             $0.bottom.equalTo(contentView)
         }
+    }
+    
+    override func configureUI() {
+        super.configureUI()
+        
+        contentView.backgroundColor = .black.withAlphaComponent(0.3)
+        contentView.layer.cornerRadius = 8
+    }
+    
+    func configureData(_ data: ThreeHourForecast) {
+        time.text = "\(data.time.formatted())시"
+        if let url = URL(string: "https://openweathermap.org/img/wn/\(data.iconName)@2x.png") {
+            icon.kf.setImage(with: url)
+        }
+        degree.text = "\((data.degree-275).formatted())Cº"
     }
 }
