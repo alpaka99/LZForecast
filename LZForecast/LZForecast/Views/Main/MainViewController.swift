@@ -19,14 +19,10 @@ final class MainViewController: BaseViewController<MainView> {
         baseView.mapButton.addTarget(self, action: #selector(mapButtonTapped), for: .touchUpInside)
         baseView.bulletListButton.addTarget(self, action: #selector(bulletListButtonTapped), for: .touchUpInside)
         
-        baseView.tableView.delegate = self
-        baseView.tableView.dataSource = self
-        baseView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.identifier)
-        baseView.tableView.register(CityInfoCell.self, forCellReuseIdentifier: CityInfoCell.identifier)
-        baseView.tableView.register(ThreeHourForecastCell.self, forCellReuseIdentifier: ThreeHourForecastCell.identifier)
-        baseView.tableView.register(FiveDayForecastCell.self, forCellReuseIdentifier: FiveDayForecastCell.identifier)
-        baseView.tableView.register(MapCell.self, forCellReuseIdentifier: MapCell.identifier)
-        baseView.tableView.register(AdditionalInfoCell.self, forCellReuseIdentifier: AdditionalInfoCell.identifier)
+        baseView.threeHourForecastView.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifier)
+        baseView.threeHourForecastView.collectionView.register(ThreeHourCollectionViewCell.self, forCellWithReuseIdentifier: ThreeHourCollectionViewCell.identifier)
+        baseView.fiveDayForecastView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.identifier)
+        baseView.fiveDayForecastView.tableView.register(, forCellReuseIdentifier: <#T##String#>)
     }
     
     @objc

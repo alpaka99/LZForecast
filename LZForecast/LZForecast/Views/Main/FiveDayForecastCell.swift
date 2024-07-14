@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class FiveDayForecastCell: BaseTableViewCell {
+final class FiveDayForecastView: BaseView {
     let title = {
         let label = UILabel()
         label.text = "5일 알림"
@@ -21,20 +21,20 @@ final class FiveDayForecastCell: BaseTableViewCell {
     override func configureHierarchy() {
         super.configureHierarchy()
         
-        contentView.addSubview(title)
-        contentView.addSubview(tableView)
+        self.addSubview(title)
+        self.addSubview(tableView)
         tableView.backgroundColor = .green
     }
     
     override func configureLayout() {
         super.configureLayout()
         title.snp.makeConstraints {
-            $0.top.horizontalEdges.equalTo(contentView)
+            $0.top.horizontalEdges.equalTo(self)
         }
         tableView.snp.makeConstraints {
             $0.top.equalTo(title.snp.bottom)
-            $0.horizontalEdges.equalTo(contentView)
-            $0.bottom.equalTo(contentView)
+            $0.horizontalEdges.equalTo(self)
+            $0.bottom.equalTo(self)
         }
     }
     
