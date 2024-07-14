@@ -22,7 +22,7 @@ final class WeatherAPIManager {
         AF.request(
             url,
             parameters: parameters)
-        .responseDecodable(of: WeatherCurrentResponse.self) { response in
+        .responseDecodable(of: WeatherForecastResponse.self) { response in
             switch response.result {
             case .success(let value):
                 dump(value)
