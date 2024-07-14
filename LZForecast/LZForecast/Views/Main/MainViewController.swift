@@ -32,7 +32,7 @@ final class MainViewController: BaseViewController<MainView> {
     override func bindData() {
         super.bindData()
         
-        viewModel.cityInfo.bind { [weak self] _ in
+        viewModel.outPutCityInfo.bind { [weak self] _ in
             print("Triggered")
             self?.baseView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
         }
@@ -55,15 +55,7 @@ final class MainViewController: BaseViewController<MainView> {
     
     func fetchWeatherData() {
         WeatherAPIManager.shared.requestWeather(type: .current(.coordinate(ConstCoordinate.baseLat, ConstCoordinate.baseLon)), responseType: WeatherCurrentResponse.self) {[weak self] response in
-            let cityInfo = CityInfo(
-                cityName: response.name,
-                currentTemp: response.main.temp - 275,
-                forecastStatus: response.weather.first?.description ?? "",
-                maxTemp: response.main.temp_max,
-                minTemp: response.main.temp_min
-            )
-            print(cityInfo)
-            self?.viewModel.cityInfo.value = cityInfo
+            self?.viewModel.inputWeatherCurrentResponse.value = response
         }
         
         WeatherAPIManager.shared.requestWeather(type: .forecast(.coordinate(ConstCoordinate.baseLat, ConstCoordinate.baseLon)), responseType: WeatherForecastResponse.self) { response in
@@ -92,7 +84,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             switch cellType {
             case .cityInfo:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CityInfoCell.identifier, for: indexPath) as? CityInfoCell else { return UITableViewCell() }
-                cell.configureData(viewModel.cityInfo.value)
+                cell.configureData(viewModel.outPutCityInfo.value)
                 return cell
             case .threeHourForecast:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ThreeHourForecastCell.identifier, for: indexPath) as? ThreeHourForecastCell else { return UITableViewCell() }
