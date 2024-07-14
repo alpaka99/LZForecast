@@ -54,6 +54,12 @@ final class MainViewController: BaseViewController<MainView> {
         
         viewModel.inputMapButtonTapped.bind { [weak self] _ in
             let vc = MapSearchViewController(baseView: MapSearchView())
+            vc.closure = { [weak self] coordinate in
+                self?.fetchWeatherData(requestType: .coordinate(
+                    coordinate.lat,
+                    coordinate.lon
+                ))
+            }
             self?.navigationController?.pushViewController(vc, animated: true)
         }
         
