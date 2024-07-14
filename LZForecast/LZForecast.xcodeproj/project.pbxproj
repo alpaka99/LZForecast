@@ -27,6 +27,7 @@
 		CEB45ACF2C44579A00327314 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CEB45ACE2C44579A00327314 /* Kingfisher */; };
 		CEB45AD12C446AC900327314 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AD02C446AC900327314 /* Weekday.swift */; };
 		CEB45AD52C446DF100327314 /* CityList.json in Resources */ = {isa = PBXBuildFile; fileRef = CEB45AD42C446DF100327314 /* CityList.json */; };
+		CEB45AD72C446E7900327314 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AD62C446E7900327314 /* FileManager.swift */; };
 		CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */; };
 		CED1E1A82C3E79A5004BFBE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */; };
 		CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */; };
@@ -70,6 +71,7 @@
 		CEB45AA62C44247B00327314 /* FiveDayForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayForecastTableViewCell.swift; sourceTree = "<group>"; };
 		CEB45AD02C446AC900327314 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		CEB45AD42C446DF100327314 /* CityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityList.json; sourceTree = "<group>"; };
+		CEB45AD62C446E7900327314 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		CED1E1A22C3E79A5004BFBE1 /* LZForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB45A892C42F4C300327314 /* WeatherAPIManager.swift */,
+				CEB45AD62C446E7900327314 /* FileManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				CEB45AA12C43E10F00327314 /* CityInfo.swift in Sources */,
 				CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */,
 				CED1E1E62C3FED29004BFBE1 /* Reusable.swift in Sources */,
+				CEB45AD72C446E7900327314 /* FileManager.swift in Sources */,
 				CEB45AA32C44136C00327314 /* ThreeHourForecast.swift in Sources */,
 				CEB45A8A2C42F4C300327314 /* WeatherAPIManager.swift in Sources */,
 				CED1E1F12C3FFD9D004BFBE1 /* BaseCollectionViewCell.swift in Sources */,
