@@ -64,4 +64,11 @@ final class AdditionalInfoCollectionViewCell: BaseCollectionViewCell {
             $0.bottom.equalTo(contentView)
         }
     }
+    
+    override func configureUI() {
+        super.configureUI()
+        
+        contentView.backgroundColor = .black.withAlphaComponent(0.3)
+        contentView.layer.cornerRadius = 8
+    }
 }

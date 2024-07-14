@@ -10,14 +10,25 @@ import UIKit
 import SnapKit
 
 final class MainView: BaseView {
-    let tableView = UITableView()
-    
     let background = {
         let image = UIImageView()
         image.image = UIImage(named: "background")
         return image
     }()
     
+    let cityInfoView = CityInfoView()
+    let threeHourForecastView = ThreeHourForecastView()
+    let fiveDayForecastView = FiveDayForecastView()
+    let mapCellView = MapCellView()
+    let additionalInfo = AdditionalInfoView()
+    
+    let contentView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+    let scrollView = UIScrollView()
     
     let mapButton = {
         var button = UIButton()
@@ -44,7 +55,16 @@ final class MainView: BaseView {
     override func configureHierarchy() {
         super.configureHierarchy()
         self.addSubview(background)
-        self.addSubview(tableView)
+        
+        contentView.addSubview(cityInfoView)
+        contentView.addSubview(threeHourForecastView)
+        contentView.addSubview(fiveDayForecastView)
+        contentView.addSubview(mapCellView)
+        contentView.addSubview(additionalInfo)
+        
+        scrollView.addSubview(contentView)
+        
+        self.addSubview(scrollView)
         self.addSubview(mapButton)
         self.addSubview(bulletListButton)
     }
@@ -56,21 +76,59 @@ final class MainView: BaseView {
             $0.edges.equalTo(self)
         }
         
-        tableView.snp.makeConstraints {
-            $0.top.horizontalEdges.equalTo(self)
+        contentView.snp.makeConstraints {
+            $0.verticalEdges.equalTo(scrollView)
+            $0.horizontalEdges.equalTo(background)
+        }
+        
+        scrollView.frameLayoutGuide.snp.makeConstraints {
+            $0.edges.equalTo(self)
+        }
+        
+        cityInfoView.snp.makeConstraints {
+            $0.top.horizontalEdges.equalTo(contentView)
+        }
+        
+        threeHourForecastView.snp.makeConstraints {
+            $0.top.equalTo(cityInfoView.snp.bottom)
+            $0.horizontalEdges.equalTo(contentView)
+            $0.height.equalTo(200)
+        }
+        
+        fiveDayForecastView.snp.makeConstraints {
+            $0.top.equalTo(threeHourForecastView.snp.bottom)
+            $0.horizontalEdges.equalTo(contentView)
+            $0.height.equalTo(300)
+        }
+        
+        mapCellView.snp.makeConstraints {
+            $0.top.equalTo(fiveDayForecastView.snp.bottom)
+            $0.horizontalEdges.equalTo(contentView)
+            $0.height.equalTo(300)
+        }
+        
+        additionalInfo.snp.makeConstraints {
+            $0.top.equalTo(mapCellView.snp.bottom)
+            $0.horizontalEdges.equalTo(contentView)
+            $0.height.equalTo(200)
+            $0.bottom.equalTo(scrollView)
+        }
+        
+        scrollView.snp.makeConstraints {
+            $0.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
         }
         
         
         mapButton.snp.makeConstraints {
-            $0.top.equalTo(tableView.snp.bottom)
-            $0.leading.equalTo(tableView.snp.leading)
+            $0.top.equalTo(scrollView.snp.bottom)
+            $0.leading.equalTo(self)
             $0.bottom.equalTo(self.safeAreaLayoutGuide)
             $0.size.equalTo(50)
         }
         
         bulletListButton.snp.makeConstraints {
-            $0.top.equalTo(tableView.snp.bottom)
-            $0.trailing.equalTo(tableView.snp.trailing)
+            $0.top.equalTo(scrollView.snp.bottom)
+            $0.trailing.equalTo(self)
             $0.bottom.equalTo(self.safeAreaLayoutGuide)
             $0.size.equalTo(50)
         }
@@ -78,8 +136,6 @@ final class MainView: BaseView {
     
     override func configureUI() {
         super.configureUI()
-        
-        tableView.backgroundColor = .clear
-        tableView.allowsSelection = false
+        scrollView.showsVerticalScrollIndicator = false
     }
 }

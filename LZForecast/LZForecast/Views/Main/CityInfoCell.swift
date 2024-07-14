@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class CityInfoCell: BaseTableViewCell {
+final class CityInfoView: BaseView {
     let cityName = {
         let label = UILabel()
         label.textColor = .white
@@ -34,7 +34,7 @@ final class CityInfoCell: BaseTableViewCell {
         return label
     }()
     
-    let endPointTemperature = {
+    let minMaxTemperature = {
         let label = UILabel()
         label.textColor = .white
         label.font = .systemFont(ofSize: 24)
@@ -53,7 +53,7 @@ final class CityInfoCell: BaseTableViewCell {
         stack.addArrangedSubview(cell.cityName)
         stack.addArrangedSubview(cell.currentTemperature)
         stack.addArrangedSubview(cell.forecastStatus)
-        stack.addArrangedSubview(cell.endPointTemperature)
+        stack.addArrangedSubview(cell.minMaxTemperature)
         
         return stack
     }()
@@ -77,5 +77,12 @@ final class CityInfoCell: BaseTableViewCell {
         super.configureUI()
         
         self.backgroundColor = .clear
+    }
+    
+    func configureData(_ data: CityInfo) {
+        cityName.text = data.cityName
+        currentTemperature.text = "\(Int(data.currentTemp))Cº"
+        forecastStatus.text = data.forecastStatus.description
+        minMaxTemperature.text = "최고: \(Int(data.maxTemp-275))º | 최저: \(Int(data.minTemp-275))º"
     }
 }
