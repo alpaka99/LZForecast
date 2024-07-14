@@ -16,7 +16,7 @@ final class MainViewController: BaseViewController<MainView> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        WeatherAPIManager.shared.requestWeather(type: .current(.coordinate(Coordinate.baseLat, Coordinate.baseLon)))
+        WeatherAPIManager.shared.requestWeather(type: .current(.coordinate(ConstCoordinate.baseLat, ConstCoordinate.baseLon)))
     }
     
     override func configureDelegate() {
