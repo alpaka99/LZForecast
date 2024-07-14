@@ -77,8 +77,8 @@ final class MainView: BaseView {
             $0.horizontalEdges.equalTo(background)
         }
         
-        scrollView.snp.makeConstraints {
-            $0.edges.equalTo(background)
+        scrollView.frameLayoutGuide.snp.makeConstraints {
+            $0.edges.equalTo(self)
         }
         
         cityInfoView.snp.makeConstraints {

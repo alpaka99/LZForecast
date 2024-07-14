@@ -42,5 +42,7 @@ final class FiveDayForecastView: BaseView {
         super.configureUI()
         
         tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
     }
 }

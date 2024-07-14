@@ -11,7 +11,6 @@
 		CEB45A822C42B31400327314 /* AdditionalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A812C42B31400327314 /* AdditionalInfoCell.swift */; };
 		CEB45A852C42C62600327314 /* ThreeHourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A842C42C62600327314 /* ThreeHourCollectionViewCell.swift */; };
 		CEB45A872C42CEB600327314 /* AdditionalInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A862C42CEB600327314 /* AdditionalInfoCollectionViewCell.swift */; };
-		CEB45ACC2C444F5A00327314 /* FiveDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45ACB2C444F5A00327314 /* FiveDayTableViewCell.swift */; };
 		CEB45A8A2C42F4C300327314 /* WeatherAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A892C42F4C300327314 /* WeatherAPIManager.swift */; };
 		CEB45A8D2C42FD4300327314 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CEB45A8C2C42FD4300327314 /* Alamofire */; };
 		CEB45A902C42FE8400327314 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45A8F2C42FE8400327314 /* APIKey.swift */; };
@@ -25,6 +24,7 @@
 		CEB45AA32C44136C00327314 /* ThreeHourForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA22C44136C00327314 /* ThreeHourForecast.swift */; };
 		CEB45AA52C44139900327314 /* FiveDayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA42C44139900327314 /* FiveDayForecast.swift */; };
 		CEB45AA72C44247B00327314 /* FiveDayForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA62C44247B00327314 /* FiveDayForecastTableViewCell.swift */; };
+		CEB45ACF2C44579A00327314 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CEB45ACE2C44579A00327314 /* Kingfisher */; };
 		CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */; };
 		CED1E1A82C3E79A5004BFBE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */; };
 		CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */; };
@@ -54,7 +54,6 @@
 		CEB45A812C42B31400327314 /* AdditionalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoCell.swift; sourceTree = "<group>"; };
 		CEB45A842C42C62600327314 /* ThreeHourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeHourCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEB45A862C42CEB600327314 /* AdditionalInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoCollectionViewCell.swift; sourceTree = "<group>"; };
-		CEB45ACB2C444F5A00327314 /* FiveDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayTableViewCell.swift; sourceTree = "<group>"; };
 		CEB45A892C42F4C300327314 /* WeatherAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIManager.swift; sourceTree = "<group>"; };
 		CEB45A8F2C42FE8400327314 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CEB45A912C43015200327314 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB45ACF2C44579A00327314 /* Kingfisher in Frameworks */,
 				CED1E1D12C3F4C59004BFBE1 /* SnapKit in Frameworks */,
 				CEB45A8D2C42FD4300327314 /* Alamofire in Frameworks */,
 			);
@@ -110,7 +110,6 @@
 			children = (
 				CEB45A842C42C62600327314 /* ThreeHourCollectionViewCell.swift */,
 				CEB45A862C42CEB600327314 /* AdditionalInfoCollectionViewCell.swift */,
-				CEB45ACB2C444F5A00327314 /* FiveDayTableViewCell.swift */,
 				CEB45AA62C44247B00327314 /* FiveDayForecastTableViewCell.swift */,
 			);
 			path = Cell;
@@ -322,6 +321,7 @@
 			packageProductDependencies = (
 				CED1E1D02C3F4C59004BFBE1 /* SnapKit */,
 				CEB45A8C2C42FD4300327314 /* Alamofire */,
+				CEB45ACE2C44579A00327314 /* Kingfisher */,
 			);
 			productName = LZForecast;
 			productReference = CED1E1A22C3E79A5004BFBE1 /* LZForecast.app */;
@@ -354,6 +354,7 @@
 			packageReferences = (
 				CED1E1CF2C3F4C59004BFBE1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CEB45A8B2C42FD4300327314 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CEB45ACD2C44579A00327314 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = CED1E1A32C3E79A5004BFBE1 /* Products */;
 			projectDirPath = "";
@@ -389,7 +390,6 @@
 				CED1E1E82C3FEE6D004BFBE1 /* CityInfoCell.swift in Sources */,
 				CEB45A802C42AE0000327314 /* MapCell.swift in Sources */,
 				CED1E1E12C3FEC57004BFBE1 /* MainViewController.swift in Sources */,
-				CEB45ACC2C444F5A00327314 /* FiveDayTableViewCell.swift in Sources */,
 				CED1E1EA2C3FF4E2004BFBE1 /* ThreeHourForecastCell.swift in Sources */,
 				CEB45A922C43015200327314 /* Coordinate.swift in Sources */,
 				CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */,
@@ -649,6 +649,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		CEB45ACD2C44579A00327314 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 		CED1E1CF2C3F4C59004BFBE1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -664,6 +672,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CEB45A8B2C42FD4300327314 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		CEB45ACE2C44579A00327314 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEB45ACD2C44579A00327314 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		CED1E1D02C3F4C59004BFBE1 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
