@@ -77,6 +77,10 @@ final class MainView: BaseView {
             $0.horizontalEdges.equalTo(background)
         }
         
+        scrollView.snp.makeConstraints {
+            $0.edges.equalTo(background)
+        }
+        
         cityInfoView.snp.makeConstraints {
             $0.top.horizontalEdges.equalTo(contentView)
         }
@@ -96,20 +100,20 @@ final class MainView: BaseView {
         
         
         scrollView.snp.makeConstraints {
-            $0.top.horizontalEdges.equalTo(self)
+            $0.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
         }
         
         
         mapButton.snp.makeConstraints {
             $0.top.equalTo(scrollView.snp.bottom)
-            $0.leading.equalTo(scrollView.snp.leading)
+            $0.leading.equalTo(self)
             $0.bottom.equalTo(self.safeAreaLayoutGuide)
             $0.size.equalTo(50)
         }
         
         bulletListButton.snp.makeConstraints {
             $0.top.equalTo(scrollView.snp.bottom)
-            $0.trailing.equalTo(scrollView.snp.trailing)
+            $0.trailing.equalTo(self)
             $0.bottom.equalTo(self.safeAreaLayoutGuide)
             $0.size.equalTo(50)
         }
@@ -118,6 +122,5 @@ final class MainView: BaseView {
     override func configureUI() {
         super.configureUI()
         
-        scrollView.backgroundColor = .white
     }
 }

@@ -19,8 +19,8 @@ final class MapCell: BaseTableViewCell {
         let mapView = MKMapView()
         let initRegion = MKCoordinateRegion(
             center: CLLocationCoordinate2D(
-            latitude: 37.51780,
-            longitude: 126.88629
+                latitude: ConstCoordinate.baseLat,
+                longitude: ConstCoordinate.baseLon
             ),
             span: MKCoordinateSpan(
                 latitudeDelta: 100,

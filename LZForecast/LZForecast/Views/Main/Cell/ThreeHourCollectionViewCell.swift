@@ -59,4 +59,11 @@ final class ThreeHourCollectionViewCell: BaseCollectionViewCell {
             $0.bottom.equalTo(contentView)
         }
     }
+    
+    func configureData(_ data: ThreeHourForecast) {
+        print(#function)
+        time.text = data.time.formatted()
+        icon.image = UIImage(systemName: data.iconName)
+        degree.text = data.degree.formatted()
+    }
 }
