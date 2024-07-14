@@ -25,6 +25,7 @@
 		CEB45AA52C44139900327314 /* FiveDayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA42C44139900327314 /* FiveDayForecast.swift */; };
 		CEB45AA72C44247B00327314 /* FiveDayForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AA62C44247B00327314 /* FiveDayForecastTableViewCell.swift */; };
 		CEB45ACF2C44579A00327314 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CEB45ACE2C44579A00327314 /* Kingfisher */; };
+		CEB45AD12C446AC900327314 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB45AD02C446AC900327314 /* Weekday.swift */; };
 		CED1E1A62C3E79A5004BFBE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */; };
 		CED1E1A82C3E79A5004BFBE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */; };
 		CED1E1AA2C3E79A5004BFBE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1E1A92C3E79A5004BFBE1 /* ViewController.swift */; };
@@ -66,6 +67,7 @@
 		CEB45AA22C44136C00327314 /* ThreeHourForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeHourForecast.swift; sourceTree = "<group>"; };
 		CEB45AA42C44139900327314 /* FiveDayForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayForecast.swift; sourceTree = "<group>"; };
 		CEB45AA62C44247B00327314 /* FiveDayForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayForecastTableViewCell.swift; sourceTree = "<group>"; };
+		CEB45AD02C446AC900327314 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		CED1E1A22C3E79A5004BFBE1 /* LZForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED1E1A52C3E79A5004BFBE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED1E1A72C3E79A5004BFBE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				CEB45A9B2C43C8FE00327314 /* WeatherForecastResponse.swift */,
 				CEB45AA22C44136C00327314 /* ThreeHourForecast.swift */,
 				CEB45AA42C44139900327314 /* FiveDayForecast.swift */,
+				CEB45AD02C446AC900327314 /* Weekday.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			files = (
 				CED1E1F32C4009EC004BFBE1 /* FiveDayForecastCell.swift in Sources */,
 				CEB45A872C42CEB600327314 /* AdditionalInfoCollectionViewCell.swift in Sources */,
+				CEB45AD12C446AC900327314 /* Weekday.swift in Sources */,
 				CED1E1EC2C3FF54D004BFBE1 /* UICollectionView+Extension.swift in Sources */,
 				CED1E1BD2C3E7FB4004BFBE1 /* BaseViewController.swift in Sources */,
 				CED1E1E32C3FEC5B004BFBE1 /* MainView.swift in Sources */,

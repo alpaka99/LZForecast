@@ -29,7 +29,7 @@ final class MainViewModel {
     }
     
     
-    func convertCityInfo() {
+    private func convertCityInfo() {
         let cityInfo = CityInfo(
             cityName: inputWeatherCurrentResponse.value.name,
             currentTemp: inputWeatherCurrentResponse.value.main.temp - 275,
@@ -47,7 +47,7 @@ final class MainViewModel {
         outputMapCoordinate.value = coord
     }
     
-    func convertForecast() {
+    private func convertForecast() {
         var threeHourForecast = [ThreeHourForecast]()
         var fiveDayForecast = [FiveDayForecast]()
         let formatter = DateFormatter()
@@ -83,34 +83,5 @@ final class MainViewModel {
         }
         outputThreeHourForecast.value = threeHourForecast
         outputFiveDayForecast.value = fiveDayForecast
-    }
-}
-
-enum WeekDay: Int {
-    case mon = 1
-    case tue
-    case wed
-    case thr
-    case fri
-    case sat
-    case sun
-    
-    var inKor: String {
-        switch self {
-        case .mon:
-            return "월"
-        case .tue:
-            return "화"
-        case .wed:
-            return "수"
-        case .thr:
-            return "목"
-        case .fri:
-            return "금"
-        case .sat:
-            return "토"
-        case .sun:
-            return "일"
-        }
     }
 }
