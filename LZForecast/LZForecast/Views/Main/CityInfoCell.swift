@@ -34,7 +34,7 @@ final class CityInfoCell: BaseTableViewCell {
         return label
     }()
     
-    let endPointTemperature = {
+    let minMaxTemperature = {
         let label = UILabel()
         label.textColor = .white
         label.font = .systemFont(ofSize: 24)
@@ -53,7 +53,7 @@ final class CityInfoCell: BaseTableViewCell {
         stack.addArrangedSubview(cell.cityName)
         stack.addArrangedSubview(cell.currentTemperature)
         stack.addArrangedSubview(cell.forecastStatus)
-        stack.addArrangedSubview(cell.endPointTemperature)
+        stack.addArrangedSubview(cell.minMaxTemperature)
         
         return stack
     }()
@@ -77,5 +77,12 @@ final class CityInfoCell: BaseTableViewCell {
         super.configureUI()
         
         self.backgroundColor = .clear
+    }
+    
+    func configureData(_ data: CityInfo) {
+        cityName.text = data.cityName
+        currentTemperature.text = String(data.currentTemp)
+        forecastStatus.text = data.forecastStatus.description
+        minMaxTemperature.text = "최고: \(data.maxTemp-275)º | 최저: \(data.minTemp-275)º"
     }
 }

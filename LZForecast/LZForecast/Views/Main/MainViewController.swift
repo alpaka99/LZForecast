@@ -11,13 +11,7 @@ import SnapKit
 
 final class MainViewController: BaseViewController<MainView> {
     
-    let cellTypes = MainViewCellType.allCases
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        WeatherAPIManager.shared.requestWeather(type: .forecast(.coordinate(ConstCoordinate.baseLat, ConstCoordinate.baseLon)))
-    }
+    let viewModel = MainViewModel()
     
     override func configureDelegate() {
         super.configureDelegate()
@@ -35,9 +29,18 @@ final class MainViewController: BaseViewController<MainView> {
         baseView.tableView.register(AdditionalInfoCell.self, forCellReuseIdentifier: AdditionalInfoCell.identifier)
     }
     
+    override func bindData() {
+        super.bindData()
+        
+        viewModel.cityInfo.bind { [weak self] _ in
+            print("Triggered")
+            self?.baseView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+        }
+    }
+    
     @objc
     func mapButtonTapped() {
-        print(#function)
+        fetchWeatherData()
     }
     
     @objc
@@ -50,11 +53,29 @@ final class MainViewController: BaseViewController<MainView> {
         super.configureNavigationItem()
     }
     
+    func fetchWeatherData() {
+        WeatherAPIManager.shared.requestWeather(type: .current(.coordinate(ConstCoordinate.baseLat, ConstCoordinate.baseLon)), responseType: WeatherCurrentResponse.self) {[weak self] response in
+            let cityInfo = CityInfo(
+                cityName: response.name,
+                currentTemp: response.main.temp - 275,
+                forecastStatus: response.weather.first?.description ?? "",
+                maxTemp: response.main.temp_max,
+                minTemp: response.main.temp_min
+            )
+            print(cityInfo)
+            self?.viewModel.cityInfo.value = cityInfo
+        }
+        
+        WeatherAPIManager.shared.requestWeather(type: .forecast(.coordinate(ConstCoordinate.baseLat, ConstCoordinate.baseLon)), responseType: WeatherForecastResponse.self) { response in
+            print(response.list.count)
+        }
+    }
+    
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return cellTypes.count
+        return viewModel.cellTypes.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,10 +88,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == baseView.tableView {
-            let cellType = cellTypes[indexPath.section]
+            let cellType = viewModel.cellTypes[indexPath.section]
             switch cellType {
             case .cityInfo:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CityInfoCell.identifier, for: indexPath) as? CityInfoCell else { return UITableViewCell() }
+                cell.configureData(viewModel.cityInfo.value)
                 return cell
             case .threeHourForecast:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: ThreeHourForecastCell.identifier, for: indexPath) as? ThreeHourForecastCell else { return UITableViewCell() }

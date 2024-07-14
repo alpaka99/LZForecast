@@ -14,25 +14,21 @@ final class WeatherAPIManager {
     
     private init() { }
     
-    internal func requestWeather(type: URLBuilder) {
+    internal func requestWeather<T: Decodable>(type: URLBuilder, responseType: T.Type, completionHandler: @escaping (T)->Void) {
         let url = type.url
         let parameters = type.parameters
-        
         
         AF.request(
             url,
             parameters: parameters)
-        .responseDecodable(of: WeatherForecastResponse.self) { response in
+        .responseDecodable(of: T.self) { response in
             switch response.result {
             case .success(let value):
-                dump(value)
+                completionHandler(value)
             case .failure(let error):
                 print("Decoding fail")
                 print(error)
             }
         }
-//        .responseString { result in
-//            print(result)
-//        }
     }
 }
