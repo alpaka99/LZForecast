@@ -18,6 +18,14 @@ final class MapSearchViewController: BaseViewController<MapSearchView> {
         super.configureDelegate()
         
         baseView.mapView.delegate = self
+        let region = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(
+                latitude: viewModel.inputMapCenter.value.lat,
+                longitude: viewModel.inputMapCenter.value.lon),
+            latitudinalMeters: 400,
+            longitudinalMeters: 400
+        )
+        baseView.mapView.region = region
         
         baseView.annotationButton.addTarget(self, action: #selector(annotationButtonTapped), for: .touchUpInside)
         
@@ -30,6 +38,11 @@ final class MapSearchViewController: BaseViewController<MapSearchView> {
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: value.lat, longitude: value.lon)
             self?.baseView.mapView.addAnnotation(annotation)
+        }
+        
+        viewModel.inputMapCenter.bind { [weak self] value in
+            let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: value.lat, longitude: value.lon), latitudinalMeters: 400, longitudinalMeters: 400)
+            self?.baseView.mapView.region = region
         }
         
         alertViewModel.inputAlertTriggered.bind { [weak self] _ in

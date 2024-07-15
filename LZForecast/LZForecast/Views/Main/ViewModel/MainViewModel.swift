@@ -17,7 +17,7 @@ final class MainViewModel {
     var outPutCityInfo = Observable(CityInfo(cityName: "", currentTemp: 0.0, forecastStatus: "", maxTemp: 0.0, minTemp: 0.0))
     var outputThreeHourForecast = Observable([ThreeHourForecast]())
     var outputFiveDayForecast = Observable([FiveDayForecast]())
-    var outputMapCoordinate = Observable(Coordinate(lat: 0, lon: 0))
+    var outputMapCoordinate = Observable(Coordinate(lat: ConstCoordinate.baseLat, lon: ConstCoordinate.baseLon))
     
     init() {
         inputWeatherCurrentResponse.bind { [weak self] _ in

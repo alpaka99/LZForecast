@@ -196,12 +196,12 @@
 			path = SearchCity;
 			sourceTree = "<group>";
 		};
-		CEB45AD32C446DE600327314 /* Data */ = {
+		CEB45AD32C446DE600327314 /* BundleData */ = {
 			isa = PBXGroup;
 			children = (
 				CEB45AD42C446DF100327314 /* CityList.json */,
 			);
-			path = Data;
+			path = BundleData;
 			sourceTree = "<group>";
 		};
 		CEB45ADE2C44741800327314 /* ViewModel */ = {
@@ -305,8 +305,8 @@
 			children = (
 				CEB45A8E2C42FE7E00327314 /* APIKeys */,
 				CEB45A942C43C3F600327314 /* Builders */,
+				CEB45AD32C446DE600327314 /* BundleData */,
 				CED1E1ED2C3FF664004BFBE1 /* Constants */,
-				CEB45AD32C446DE600327314 /* Data */,
 				CED1E1CC2C3F49BC004BFBE1 /* Extensions */,
 				CEB45A882C42F4A500327314 /* Managers */,
 				CED1E1C42C3E86AF004BFBE1 /* Observable */,

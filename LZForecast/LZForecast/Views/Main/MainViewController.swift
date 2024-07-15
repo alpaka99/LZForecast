@@ -53,14 +53,16 @@ final class MainViewController: BaseViewController<MainView> {
         }
         
         viewModel.inputMapButtonTapped.bind { [weak self] _ in
-            let vc = MapSearchViewController(baseView: MapSearchView())
-            vc.closure = { [weak self] coordinate in
+            guard let vc = self else { return }
+            let mapSearchViewController = MapSearchViewController(baseView: MapSearchView())
+            mapSearchViewController.closure = { [weak self] coordinate in
                 self?.fetchWeatherData(requestType: .coordinate(
                     coordinate.lat,
                     coordinate.lon
                 ))
             }
-            self?.navigationController?.pushViewController(vc, animated: true)
+            mapSearchViewController.viewModel.inputMapCenter.value = vc.viewModel.outputMapCoordinate.value
+            self?.navigationController?.pushViewController(mapSearchViewController, animated: true)
         }
         
         viewModel.outPutCityInfo.bind { [weak self] value in

@@ -12,8 +12,7 @@ import SnapKit
 final class MapSearchView: BaseView {
     let mapView = {
         let map = MKMapView()
-        let initRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: ConstCoordinate.baseLat, longitude: ConstCoordinate.baseLon), latitudinalMeters: 400, longitudinalMeters: 400)
-        map.region = initRegion
+        map.showsUserLocation = true
         return map
     }()
     
