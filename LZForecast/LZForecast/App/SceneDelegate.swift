@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let vc = MainViewController(baseView: MainView())
         let rootNavigationController = UINavigationController(rootViewController: vc)
+        rootNavigationController.isToolbarHidden = false
         
         window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()

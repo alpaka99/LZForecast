@@ -30,27 +30,27 @@ final class MainView: BaseView {
     
     let scrollView = UIScrollView()
     
-    let mapButton = {
-        var button = UIButton()
-        
-        var config = UIButton.Configuration.plain()
-        config.image = UIImage(systemName: "map")
-        
-        button.configuration = config
-        
-        return button
-    }()
+//    let mapButton = {
+//        var button = UIButton()
+//        
+//        var config = UIButton.Configuration.plain()
+//        config.image = UIImage(systemName: "map")
+//        
+//        button.configuration = config
+//        
+//        return button
+//    }()
 
-    let bulletListButton = {
-        var button = UIButton()
-        
-        var config = UIButton.Configuration.plain()
-        config.image = UIImage(systemName: "list.bullet")
-        
-        button.configuration = config
-        
-        return button
-    }()
+//    let bulletListButton = {
+//        var button = UIButton()
+//        
+//        var config = UIButton.Configuration.plain()
+//        config.image = UIImage(systemName: "list.bullet")
+//        
+//        button.configuration = config
+//        
+//        return button
+//    }()
 
     override func configureHierarchy() {
         super.configureHierarchy()
@@ -65,8 +65,8 @@ final class MainView: BaseView {
         scrollView.addSubview(contentView)
         
         self.addSubview(scrollView)
-        self.addSubview(mapButton)
-        self.addSubview(bulletListButton)
+//        self.addSubview(mapButton)
+//        self.addSubview(bulletListButton)
     }
     
     override func configureLayout() {
@@ -79,10 +79,6 @@ final class MainView: BaseView {
         contentView.snp.makeConstraints {
             $0.verticalEdges.equalTo(scrollView)
             $0.horizontalEdges.equalTo(background)
-        }
-        
-        scrollView.frameLayoutGuide.snp.makeConstraints {
-            $0.edges.equalTo(self)
         }
         
         cityInfoView.snp.makeConstraints {
@@ -115,23 +111,9 @@ final class MainView: BaseView {
         }
         
         scrollView.snp.makeConstraints {
-            $0.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
+            $0.edges.equalTo(self.safeAreaLayoutGuide)
         }
         
-        
-        mapButton.snp.makeConstraints {
-            $0.top.equalTo(scrollView.snp.bottom)
-            $0.leading.equalTo(self)
-            $0.bottom.equalTo(self.safeAreaLayoutGuide)
-            $0.size.equalTo(50)
-        }
-        
-        bulletListButton.snp.makeConstraints {
-            $0.top.equalTo(scrollView.snp.bottom)
-            $0.trailing.equalTo(self)
-            $0.bottom.equalTo(self.safeAreaLayoutGuide)
-            $0.size.equalTo(50)
-        }
     }
     
     override func configureUI() {

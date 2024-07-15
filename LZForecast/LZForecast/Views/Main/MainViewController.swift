@@ -16,9 +16,6 @@ final class MainViewController: BaseViewController<MainView> {
     override func configureDelegate() {
         super.configureDelegate()
         
-        baseView.mapButton.addTarget(self, action: #selector(mapButtonTapped), for: .touchUpInside)
-        baseView.bulletListButton.addTarget(self, action: #selector(bulletListButtonTapped), for: .touchUpInside)
-        
         baseView.threeHourForecastView.collectionView.delegate = self
         baseView.threeHourForecastView.collectionView.dataSource = self
         baseView.threeHourForecastView.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifier)
@@ -35,10 +32,16 @@ final class MainViewController: BaseViewController<MainView> {
         baseView.additionalInfo.collectionView.register(AdditionalInfoCollectionViewCell.self, forCellWithReuseIdentifier: AdditionalInfoCollectionViewCell.identifier)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         fetchWeatherData()
+        
+        toolbarItems = [
+            UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(mapButtonTapped)),
+            UIBarButtonItem(systemItem: .flexibleSpace),
+            UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(bulletListButtonTapped))
+        ]
     }
     
     override func bindData() {
@@ -154,13 +157,4 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         }
     }
-}
-
-
-enum MainViewCellType: CaseIterable {
-    case cityInfo
-    case threeHourForecast
-    case fiveHourForecast
-    case map
-    case additinalInfo
 }
