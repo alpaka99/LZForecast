@@ -34,7 +34,17 @@ final class MapSearchView: BaseView {
         image.backgroundColor = .systemBlue.withAlphaComponent(0.5)
         return image
     }()
-    
+    let userLocationButton = {
+        let button = UIButton()
+        var config = UIButton.Configuration.plain()
+        config.image = UIImage(systemName: "location.fill")
+        config.background.backgroundColor = .systemBlue
+        
+        config.buttonSize = .small
+        button.configuration = config
+        button.tintColor = .white
+        return button
+    }()
     
     override func configureHierarchy() {
         super.configureHierarchy()
@@ -42,6 +52,7 @@ final class MapSearchView: BaseView {
         self.addSubview(mapView)
         self.addSubview(annotationButton)
         self.addSubview(centerCircle)
+        mapView.addSubview(userLocationButton)
     }
     
     override func configureLayout() {
@@ -63,6 +74,12 @@ final class MapSearchView: BaseView {
             $0.center.equalTo(mapView.snp.center)
             $0.size.equalTo(20)
         }
+        
+        userLocationButton.snp.makeConstraints {
+            $0.leading.bottom.equalTo(mapView)
+                .inset(16)
+            $0.height.equalTo(userLocationButton.snp.width)
+        }
     }
     
     override func draw(_ rect: CGRect) {
@@ -70,6 +87,7 @@ final class MapSearchView: BaseView {
         
         annotationButton.layer.cornerRadius = annotationButton.frame.height / 2
         centerCircle.layer.cornerRadius = centerCircle.frame.height / 2
-        
+        userLocationButton.layer.cornerRadius = userLocationButton.frame.height / 2
+        userLocationButton.clipsToBounds = true
     }
 }

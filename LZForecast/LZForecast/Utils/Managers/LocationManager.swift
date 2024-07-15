@@ -11,13 +11,17 @@ final class LocationManager: NSObject {
     static let shared = LocationManager()
     private let locationManager = CLLocationManager()
     
-    private override init() { }
+    private override init() { 
+        super.init()
+        locationManager.delegate = self
+    }
 }
 
 
 extension LocationManager: CLLocationManagerDelegate {
     func checkDeviceLocationAuthorization() {
         if CLLocationManager.locationServicesEnabled() {
+            print("위치 정보 허용 켜져있음")
             checkCurrentAuthorization()
         } else {
             print("위치 정보 허용이 꺼져있음")
@@ -49,13 +53,17 @@ extension LocationManager: CLLocationManagerDelegate {
         }
     }
     
+    
+    
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         locationManager.stopUpdatingLocation()
     }
     
     func getUserLocation() -> CLLocation? {
-        locationManager.startUpdatingLocation()
+        
+        checkCurrentAuthorization()
         
         if let location = locationManager.location {
             return location

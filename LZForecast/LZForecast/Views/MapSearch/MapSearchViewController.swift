@@ -27,8 +27,8 @@ final class MapSearchViewController: BaseViewController<MapSearchView> {
         )
         baseView.mapView.region = region
         
+        baseView.userLocationButton.addTarget(self, action: #selector(userLocationButtonTapped), for: .touchUpInside)
         baseView.annotationButton.addTarget(self, action: #selector(annotationButtonTapped), for: .touchUpInside)
-        
     }
     
     override func bindData() {
@@ -86,6 +86,15 @@ final class MapSearchViewController: BaseViewController<MapSearchView> {
         alertViewModel.inputSelectedCoordinate.bind { [weak self] value in
             self?.closure?(value)
             self?.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    @objc
+    func userLocationButtonTapped(_ sender: UIButton) {
+        if let location = LocationManager.shared.getUserLocation() {
+            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 400, longitudinalMeters: 400)
+            print(location)
+            baseView.mapView.region = region
         }
     }
     
