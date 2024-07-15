@@ -12,11 +12,12 @@ final class MainViewModel {
     var inputWeatherCurrentResponse = Observable(WeatherCurrentResponse(coord: Coordinate(lat: 0, lon: 0), weather: [], main: Main(temp: 0, temp_min: 0, temp_max: 0), wind: Wind(speed: 0, deg: 0, gust: 0), name: ""))
     var inputWeatherForecastResponse = Observable(WeatherForecastResponse(cod: "", message: 0, cnt: 0, list: []))
     var inputSearchButtonTapped: Observable<Void?> = Observable(())
+    var inputMapButtonTapped: Observable<Void?> = Observable(())
     
     var outPutCityInfo = Observable(CityInfo(cityName: "", currentTemp: 0.0, forecastStatus: "", maxTemp: 0.0, minTemp: 0.0))
     var outputThreeHourForecast = Observable([ThreeHourForecast]())
     var outputFiveDayForecast = Observable([FiveDayForecast]())
-    var outputMapCoordinate = Observable(Coordinate(lat: 0, lon: 0))
+    var outputMapCoordinate = Observable(Coordinate(lat: ConstCoordinate.baseLat, lon: ConstCoordinate.baseLon))
     
     init() {
         inputWeatherCurrentResponse.bind { [weak self] _ in
