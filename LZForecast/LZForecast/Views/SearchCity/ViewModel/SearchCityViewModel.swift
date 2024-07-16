@@ -8,7 +8,7 @@
 import Foundation
 
 final class SearchCityViewModel {
-    let cityList: [City] = FileManager.shared.fetchFileData(fileName: "CityList", type: [City].self) ?? []
+    private var cityList: [City] = []
     lazy var filteredCityList: Observable<[City]> = Observable(cityList)
     
     var inputSearchText = Observable("")
@@ -16,6 +16,15 @@ final class SearchCityViewModel {
     init() {
         inputSearchText.bind { [weak self] value in
             self?.searchTextChanged(value)
+        }
+        
+        let result = FileManager.shared.fetchFileData(fileName: "CityList", type: [City].self)
+        
+        switch result {
+        case .success(let value):
+            self.cityList = value
+        case .failure(let error):
+            print(error.localizedDescription)
         }
     }
     

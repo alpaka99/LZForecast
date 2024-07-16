@@ -101,12 +101,24 @@ final class MainViewController: BaseViewController<MainView> {
     }
     
     func fetchWeatherData(requestType: RequestDataType = .id(1835847)) {
-        WeatherAPIManager.shared.requestWeather(type: .current(requestType), responseType: WeatherCurrentResponse.self) {[weak self] response in
-            self?.viewModel.inputWeatherCurrentResponse.value = response
+        WeatherAPIManager.shared.requestWeather(type: .current(requestType), responseType: WeatherCurrentResponse.self) {[weak self] result in
+            switch result {
+            case .success(let value):
+                self?.viewModel.inputWeatherCurrentResponse.value = value
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            
         }
         
-        WeatherAPIManager.shared.requestWeather(type: .forecast(requestType), responseType: WeatherForecastResponse.self) { [weak self] response in
-            self?.viewModel.inputWeatherForecastResponse.value = response
+        WeatherAPIManager.shared.requestWeather(type: .forecast(requestType), responseType: WeatherForecastResponse.self) { [weak self] result in
+            switch result {
+            case .success(let value):
+                self?.viewModel.inputWeatherForecastResponse.value = value
+            case .failure(let error):
+                print(error)
+            }
+            
         }
     }
     
