@@ -11,22 +11,20 @@ final class FileManager {
     static let shared = FileManager()
     private init () { }
     
-    func fetchFileData<T: Codable>(fileName: String, type: T.Type) -> T? {
+    func fetchFileData<T: Codable>(fileName: String, type: T.Type) -> Result<T, Error> {
         let url = Bundle.main.url(forResource: fileName, withExtension: "json")
         
-        guard let url = url else { return nil }
+        guard let url = url else { return .failure(NSError(domain: "URL Creation Error", code: 1)) }
         
         do {
             let fetchedData = try Data(contentsOf: url)
             
             let decodedData = try JSONDecoder().decode(T.self, from: fetchedData)
             
-            return decodedData
+            return .success(decodedData)
         } catch {
             print("Data fetch failed")
-            print(error)
+            return .failure(error)
         }
-        
-        return nil
     }
 }
