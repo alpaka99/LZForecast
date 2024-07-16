@@ -46,14 +46,14 @@ final class MapSearchViewController: BaseViewController<MapSearchView> {
         }
         
         alertViewModel.inputAlertTriggered.bind { [weak self] _ in
-            let ac = UIAlertController(title: "이 위치에", message: "어떤 일을 해볼까요?", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "취소", style: .cancel) { _  in
+            let ac = UIAlertController(title: self?.alertViewModel.searchTitle, message: self?.alertViewModel.message, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: self?.alertViewModel.cancelTitle, style: .cancel) { _  in
                 self?.alertViewModel.inputCancelButtonTapped.value = ()
             }
-            let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
+            let deleteAction = UIAlertAction(title: self?.alertViewModel.deleteTitle, style: .destructive) { _ in
                 self?.alertViewModel.inputDeleteButtonTapped.value = ()
             }
-            let searchAction = UIAlertAction(title: "검색", style: .default) { _ in
+            let searchAction = UIAlertAction(title: self?.alertViewModel.searchTitle, style: .default) { _ in
                 self?.alertViewModel.inputSearchButtonTapped.value = ()
             }
             

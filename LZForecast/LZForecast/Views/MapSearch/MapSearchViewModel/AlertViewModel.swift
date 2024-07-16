@@ -13,5 +13,11 @@ final class AlertViewModel {
     var inputDeleteButtonTapped: Observable<Void?> = Observable(())
     var inputSearchButtonTapped: Observable<Void?> = Observable(())
     
+    let alertTitle = "이 위치에서"
+    let message = "어떤 일을 해볼까요?"
+    let cancelTitle = "취소"
+    let deleteTitle = "삭제"
+    let searchTitle = "검색"
+    
     var inputSelectedCoordinate: Observable<Coordinate> = Observable(Coordinate(lat: 0, lon: 0))
 }
