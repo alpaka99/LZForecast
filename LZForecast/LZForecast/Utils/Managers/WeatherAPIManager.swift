@@ -13,7 +13,7 @@ final class WeatherAPIManager {
     static let shared = WeatherAPIManager()
     
     private init() {
-        CustomReferenceCounter.shared.increment(name: String(describing: self))
+        CustomReferenceCounter.shared.increment(name: String(describing: type(of: self)))
     }
     
     internal func requestWeather<T: Decodable>(type: URLBuilder, responseType: T.Type, completionHandler: @escaping (Result<T, AFError>)->Void) {
@@ -34,6 +34,6 @@ final class WeatherAPIManager {
     }
     
     deinit {
-        CustomReferenceCounter.shared.decrement(name: String(describing: self))
+        CustomReferenceCounter.shared.decrement(name:  String(describing: type(of: self)))
     }
 }

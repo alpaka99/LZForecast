@@ -10,7 +10,7 @@ import Foundation
 final class FileManager {
     static let shared = FileManager()
     private init () { 
-        CustomReferenceCounter.shared.increment(name: String(describing: self))
+        CustomReferenceCounter.shared.increment(name:  String(describing: type(of: self)))
     }
     
     func fetchFileData<T: Codable>(fileName: String, type: T.Type) -> Result<T, Error> {
@@ -31,6 +31,6 @@ final class FileManager {
     }
     
     deinit {
-        CustomReferenceCounter.shared.decrement(name: String(describing: self))
+        CustomReferenceCounter.shared.decrement(name: String(describing: type(of: self)))
     }
 }

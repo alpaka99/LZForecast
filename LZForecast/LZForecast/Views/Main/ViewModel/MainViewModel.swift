@@ -19,7 +19,7 @@ final class MainViewModel {
     var outputMapCoordinate = Observable(Coordinate(lat: ConstCoordinate.baseLat, lon: ConstCoordinate.baseLon))
     
     init() {
-        CustomReferenceCounter.shared.increment(name: String(describing: self))
+        CustomReferenceCounter.shared.increment(name:  String(describing: type(of: self)))
         inputWeatherCurrentResponse.bind { [weak self] _ in
             self?.convertCityInfo()
         }
@@ -87,6 +87,6 @@ final class MainViewModel {
     }
     
     deinit {
-        CustomReferenceCounter.shared.decrement(name: String(describing: self))
+        CustomReferenceCounter.shared.decrement(name: String(describing: type(of: self)))
     }
 }

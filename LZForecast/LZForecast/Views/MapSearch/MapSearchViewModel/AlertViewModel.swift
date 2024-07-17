@@ -9,7 +9,7 @@ import Foundation
 
 final class AlertViewModel {
     init() {
-        CustomReferenceCounter.shared.increment(name: String(describing: self))
+        CustomReferenceCounter.shared.increment(name:  String(describing: type(of: self)))
     }
     
     var inputAlertTriggered: Observable<Void?> = Observable(())
@@ -20,6 +20,6 @@ final class AlertViewModel {
     var inputSelectedCoordinate: Observable<Coordinate> = Observable(Coordinate(lat: 0, lon: 0))
     
     deinit {
-        CustomReferenceCounter.shared.decrement(name: String(describing: self))
+        CustomReferenceCounter.shared.decrement(name: String(describing: type(of: self)))
     }
 }
