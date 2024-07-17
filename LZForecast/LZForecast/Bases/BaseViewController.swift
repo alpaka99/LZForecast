@@ -18,6 +18,7 @@ class BaseViewController<T: BaseView>: UIViewController {
     init(baseView: T) {
         self.baseView = baseView
         super.init(nibName: nil, bundle: nil)
+        CustomReferenceCounter.shared.increment(name: objectName)
     }
     
     @available(iOS, unavailable)
@@ -38,4 +39,8 @@ class BaseViewController<T: BaseView>: UIViewController {
     internal func configureDelegate() { }
     
     internal func bindData() { }
+    
+    deinit {
+        CustomReferenceCounter.shared.decrement(name: objectName)
+    }
 }

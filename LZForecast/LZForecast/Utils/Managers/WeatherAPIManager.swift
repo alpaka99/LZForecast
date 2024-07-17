@@ -12,7 +12,9 @@ import Alamofire
 final class WeatherAPIManager {
     static let shared = WeatherAPIManager()
     
-    private init() { }
+    private init() {
+        CustomReferenceCounter.shared.increment(name: String(describing: type(of: self)))
+    }
     
     internal func requestWeather<T: Decodable>(type: URLBuilder, responseType: T.Type, completionHandler: @escaping (Result<T, AFError>)->Void) {
         let url = type.url
@@ -29,5 +31,9 @@ final class WeatherAPIManager {
                 completionHandler(.failure(error))
             }
         }
+    }
+    
+    deinit {
+        CustomReferenceCounter.shared.decrement(name:  String(describing: type(of: self)))
     }
 }
