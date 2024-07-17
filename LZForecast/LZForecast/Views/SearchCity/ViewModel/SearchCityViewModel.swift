@@ -14,6 +14,7 @@ final class SearchCityViewModel {
     var inputSearchText = Observable("")
     
     init() {
+        CustomReferenceCounter.shared.increment(name: String(describing: self))
         inputSearchText.bind { [weak self] value in
             self?.searchTextChanged(value)
         }
@@ -36,5 +37,9 @@ final class SearchCityViewModel {
                 $0.name.localizedStandardContains(text)
             }
         }
+    }
+    
+    deinit {
+        CustomReferenceCounter.shared.decrement(name: String(describing: self))
     }
 }

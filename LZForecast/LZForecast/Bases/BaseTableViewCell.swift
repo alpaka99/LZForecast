@@ -10,7 +10,7 @@ import UIKit
 class BaseTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        CustomReferenceCounter.shared.increment(name: objectName)
         configureHierarchy()
         configureLayout()
         configureUI()
@@ -27,5 +27,9 @@ class BaseTableViewCell: UITableViewCell {
     
     internal func configureUI() {
         backgroundColor = .clear
+    }
+    
+    deinit {
+        CustomReferenceCounter.shared.decrement(name: objectName)
     }
 }

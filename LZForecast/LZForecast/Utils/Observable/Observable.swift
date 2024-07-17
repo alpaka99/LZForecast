@@ -18,6 +18,7 @@ final class Observable<T> {
     
     init(_ value: T) {
         self.value = value
+        CustomReferenceCounter.shared.increment(name: String(describing: self))
     }
     
     internal func actionBind(_ closure: @escaping (T)->Void) {
@@ -27,5 +28,9 @@ final class Observable<T> {
     
     internal func bind(_ closure: @escaping (T)->Void) {
         self.closure = closure
+    }
+    
+    deinit {
+        CustomReferenceCounter.shared.decrement(name: String(describing: self))
     }
 }

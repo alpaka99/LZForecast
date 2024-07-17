@@ -12,7 +12,7 @@ class BaseCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        
+        CustomReferenceCounter.shared.increment(name: objectName)
         configureHierarchy()
         configureLayout()
         configureUI()
@@ -30,6 +30,10 @@ class BaseCollectionViewCell: UICollectionViewCell {
     internal func configureUI() {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
+    }
+    
+    deinit {
+        CustomReferenceCounter.shared.decrement(name: objectName)
     }
 }
 

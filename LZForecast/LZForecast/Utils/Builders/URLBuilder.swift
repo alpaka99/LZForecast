@@ -47,22 +47,4 @@ enum URLBuilder {
             }
         }
     }
-//    var url: String {
-//        switch self {
-//        case .current(let value):
-//            switch value {
-//            case .coordinate(let lat, let lon):
-//                return "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid={API key}"
-//            case .id(let id):
-//                 return "https://api.openweathermap.org/data/2.5/weather? id=\(id)&appid={APIKey}"
-//            }
-//        case .forecast(let value):
-//            switch value {
-//            case .coordinate(let lat, let lon):
-//                return "http://api.openweathermap.org/data/2.5/forecast? lat=\(lat).654165&lon=\(lon)&appid={APIKey}"
-//            case .id(let id):
-//                return "https://api.openweathermap.org/data/2.5/forecast? id=\(id)&appid={APIKey}"
-//            }
-//        }
-//    }
 }

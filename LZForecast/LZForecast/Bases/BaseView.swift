@@ -11,7 +11,7 @@ class BaseView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        
+        CustomReferenceCounter.shared.increment(name: objectName)
         configureHierarchy()
         configureLayout()
         configureUI()
@@ -27,4 +27,8 @@ class BaseView: UIView {
     internal func configureLayout() { }
     
     internal func configureUI() { }
+    
+    deinit {
+        CustomReferenceCounter.shared.decrement(name: objectName)
+    }
 }
